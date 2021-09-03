@@ -316,8 +316,8 @@ if (exists("assignation"))
   assignation("B04Ga_speed_reaction", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Ga_speed-reaction",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/DuJyBwfY", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/TVj1lxHC"),
+      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     toc = "Vitesse de réaction chimique - Exercice pratique cadré sur la régression non linéaire")
 ```
 
@@ -814,8 +814,8 @@ if (exists("assignation"))
   assignation("B04Gb_bacterial_growth", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Gb_bacterial_growth",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/2n7jgK3t", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/bLfInvZs"),
+      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     toc = "Croissance bactérienne - Exercices pratiques libres sur la régression non linéaire")
 ```
 

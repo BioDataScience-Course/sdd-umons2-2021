@@ -699,8 +699,8 @@ if (exists("assignation"))
   assignation("B01Ga_reglin1", part = NULL,
     url = "https://github.com/BioDataScience-Course/B01Ga_reglin1",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/o40tVOh8", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/u1SbQgxf"),
+      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     toc = "Utilisation de la régression linéaire simple")
 ```
 

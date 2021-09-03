@@ -193,8 +193,8 @@ if (exists("assignation"))
   assignation("B02Ga_anscombe", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ga_anscombe",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/Rfdvbqw2", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/9EQCVg1n"),
+      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     toc = "Quartet d’Anscombe")
 ```
 
@@ -490,8 +490,8 @@ if (exists("assignation"))
   assignation("B02Gb_achatina", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Gb_achatina",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/IIpgV7Mc", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/jGUT4KnU"),
+      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     toc = "Utilisation de la régression linéaire (travail individuel sur achatina)")
 ```
 
@@ -500,8 +500,8 @@ if (exists("assignation2"))
   assignation2("B02Gc_urchin", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02G_urchin",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/g/foTtdgC5", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/g/5nzpamBh"),
+      'S-BIOG-015' = "https://classroom.github.com/g/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
     toc = "Utilisation la régression linéaire (travail en binôme sur urchin)")
 ```
 
