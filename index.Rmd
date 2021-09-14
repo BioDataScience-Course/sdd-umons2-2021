@@ -99,3 +99,61 @@ Pour annoter ou surligner, vous sélectionnez du texte et vous cliquez sur l'un 
 :::
 
 ```
+
+## Approche pédagogique {-}
+
+Ce livre en ligne ainsi que tout le matériel pédagogique cité plus haut a été développé pour être employé en pédagogie active en classe inversée. On peut résumer cette approche en deux phases. Vous apprenez d’abord à la maison, nous appliquons *ensuite* en présentiel. 
+
+### Classe inversée & pédagogie active {-}
+
+Jusqu'à présent, la plus grande partie de vos cours vous ont été donné de manière classique. Vous avez donc suivi **passivement** un cours *ex cathedra* suivi par une séance d'exercice ou de travaux pratiques. 
+
+On peut schématiser ce mode d'apprentissage comme cela
+
+![](images/sdd2_00/organisation1.png)
+
+A la fin, un examen est indispensable pour valider l'acquisition des concetps.
+
+Le cours de science des données I utilise une autre approche et se donne en classe inversée. Le schéma ci-dessous vous propose l'organisation d'un module du cours. Vous devrez donc préparer en distanciel chaque session de cours en présentiel. Lors de chaque heure de travail lié à ce cours vous serez donc **actif**. 
+
+![](images/sdd2_00/organisation2.png)
+
+### Quatre niveaux d'exercices {-}
+
+Quatre niveaux d'exercices de difficultés croissantes vous seront proposé.
+
+- niveau I : découverte des notions dans des exercices rapides et ciblés intégrés au sein du cours en ligne.
+- niveau II : appliquer les notions vues dans des exercices sous la forme de tutoriel très cadré
+- niveau III : transférer les notions dans des projets individuels guidés sur des données biologiques
+- niveau IV : Créer/réaliser des analyses sur des projets de groupe libre sur des données biologiques nouvelles grâce aux notions vues
+
+Chaque type d'exercice est associé à un outil présenté dans la matériel pédagogique. 
+
+![](images/sdd2_00/apprendre2.png)
+
+L'ensemble de vos réponses sont collectées et utilisée afin de construire la note finale. Il n'est donc plus nécessaire de passer une examen classique en session d'examen. Tous ces exercices prouvent que vous avez acquis ou non les acquis d'apprentissage de ce cours.
+
+Votre progression au sein de exercices de chaque module est mis à votre disposition à la fin de chaque module ou bien depuis moodle.
+
+### Plan du cours {-}
+
+Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. Ce document structure les attentes de vos encadrants. Veuillez consulter ce document attentivement. 
+
+- [Plan du cours de Science des données biologiques II : années 2021-2022](https://github.com/BioDataScience-Course/BioDataScience-Common/blob/main/docs/plan_de_cours/2021_sdd2_plan_cours.md) 
+
+## Questions {-} 
+
+Toutes les questions relatives aux exercices sont à poser dans les issues GitHub. 
+
+```{r, echo=FALSE, results='asis'}
+if (exists("assignation2"))
+  assignation("sdd_issues", part = NULL,
+    url = "https://github.com/BioDataScience-Course/sdd_issues",
+    course.urls = c(
+      'S-BIOG-015' = "https://classroom.github.com/g/m_6f0p-h",
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    toc = "Poser ses questions dans une issue.")
+```
+
+*Note : vos enseignants sont également accessibles par mail sdd@sciviews.org.*
+
