@@ -141,19 +141,26 @@ Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. 
 
 - [Plan du cours de Science des données biologiques II : années 2021-2022](https://github.com/BioDataScience-Course/BioDataScience-Common/blob/main/docs/plan_de_cours/sdd2_plan_cours_2021-2022.md) 
 
-## Questions {-} 
+## Issues {-} 
 
-Toutes les questions relatives aux exercices sont à poser dans les issues GitHub. 
+Toutes les questions relatives aux exercices sont à poser dans les issues GitHub dédiées à ce cours. L'assignation GitHub classroom ci-dessous vous permet de rejoindre cet espace de discussion.
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation2"))
-  assignation("sdd_issues", part = NULL,
+  assignation2("sdd_issues", part = NULL,
     url = "https://github.com/BioDataScience-Course/sdd_issues",
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/g/m_6f0p-h",
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Poser ses questions dans une issue.")
+    toc = "Poser ses questions dans une issue.",
+    texts = learnitdown::assignation2_fr(
+      title = "Rejoignez l'assignation",
+      course = "Assignation GitHub Classroom d\u00e9di\u00e9e aux issues pour les \u00e9tudiants inscrits au cours de", 
+      alt = "Les issues ne sont pas accessibles aux \u00e9tudiants externes."))
 ```
 
 *Note : vos enseignants sont également accessibles par mail sdd@sciviews.org.*
 
+Une fois que vous avez rejoint l'équipe `B21`, il n'est plus nécessaire d'utiliser cette assignation. Vous pouvez retrouver directement ce dépôt via la bannière du site.
+
+![](images/sdd2_00/issues.png)
