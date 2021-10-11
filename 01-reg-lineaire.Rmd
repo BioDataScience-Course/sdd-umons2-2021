@@ -18,13 +18,31 @@ SciViews::R
 
 Avant de vous lancer tête baissée dans de la matière nouvelle, assurez-vous d'avoir installé la SciViews Box `r learnitdown$svbox`. Si ce n'est pas encore fait, retournez à la [page d'accueil pour bien débuter]( `r learnitdown$baseurl` ).
 
-Consacrez un petit quart d'heure dans la SciViews Box nouvelle mouture pour repérer les nouvelles icônes dans le Dock et dans le menu `Applications`. Vous retrouverez R et RStudio, mais dans des version plus récentes qui apportent également leur lot de nouveautés (recherchez par exemple le nouvel onglet **Tutorial** dans RStudio). 
+RStudio et (R) Markdown ne doivent plus avoir de secrets pour vous. 
 
-Une fois la nouvelle SciViews Box fonctionnelle sur votre ordinateur, vous allez réaliser une séance d'exercices couvrant les points essentiels des notions abordées dans le livre [science des données biologiques partie 1](https://wp.sciviews.org/sdd-umons), histoire de rafraîchir vos connaissances de l'an dernier. 
+##### À vous de jouer ! {-}
+
+`r h5p(190, height = 270, toc = NULL)`
+
+Vous devez aussi maîtriser les bases de Git et de GitHub (avoir un compte GitHub, savoir cloner un dépôt localement, travailler avec GitHub Desktop pour faire ses "commits", "push" et "pull"). 
+
+##### À vous de jouer ! {-}
+
+`r h5p(191, height = 270, toc = NULL)`
+
+L'ensemble de ces outils a été abordé dans le premier module  et dans les annexes du cours précédents [SDD I](`r paste(learnitdown$baseurl, "sdd-umons", sep = "/")`).
+
+Outre les outils, ce cours s'appuie sur des notions  que nous avons déjà abordé dans le cours de [science des données biologiques partie 1]( `r paste(learnitdown$baseurl, "sdd-umons", sep = "/")` ) comme la réalisation de graphiques variées, l'analyse de la variance ou encore les associations entre les variables. 
+
+##### À vous de jouer ! {-}
+
+`r h5p(192, height = 270, toc = NULL)`
 
 Les tutoriels `learnr` auxquels vous êtes maintenant habitués seront là pour vous aider à auto-évaluer votre progression. Pour le cours 2, ces tutoriels sont dans le package {BioDataScience2} que vous venez normalement d'installer si vous avez bien suivi toutes les instructions de configuration de votre SciViews Box.
 
 ##### À vous de jouer ! {-}
+
+Réalisez le tutoriel ci-dessous afin de revoir une série de notions du cours de science des données 1.
 
 `r learnr("B01La_rappel", title = "Révision des notions de SDD I", toc = "Révision des notions de SDD I")`
 
@@ -47,6 +65,10 @@ $$y = 0.35 \ x - 1.23$$
 ```{block2, type='warning'}
 La distinction entre *variable* et *paramètre* dans les équations précédentes semble difficile pour certaines personnes. C'est pourtant crucial de pouvoir le faire pour bien comprendre la suite. Alors, c'est le bon moment de **relire attentivement** ce qui est écrit ci-dessus et de s'assurer d'avoir bien compris avant d'aller plus avant\ !
 ```
+
+##### À vous de jouer ! {-}
+
+`r h5p(193, height = 270, toc = "Paramètres et variables d'une équation")`
 
 ### Pourquoi modéliser ?
 
@@ -98,6 +120,10 @@ La distinction entre ces trois degrés d'association de deux variables est cruci
 vembedr::embed_youtube("aOX0pIwBCvw", width = 770, height = 433)
 ```
 
+##### À vous de jouer ! {-}
+
+`r h5p(194, height = 270, toc = "Association entre deux variables")`
+
 ### Entraînement et confirmation
 
 En statistique, une règle universelle veut qu'une observation ne peut servir qu'une seule fois. Ainsi, toutes les données utilisées pour calculer le modèle ne *peuvent pas servir simultanément* à la confirmer. Il faut échantillonner d'autres valeurs pour effectuer cette confirmation. Il s'en suit une spécialisation des jeux de données en\ :
@@ -133,6 +159,10 @@ Nous pouvons également observer cette matrice sous la forme d'un graphique plus
 ```{r}
 plot(trees_corr, type = "lower")
 ```
+
+##### À vous de jouer ! {-}
+
+`r h5p(195, height = 270, toc = "Les coefficient de corrélation")`
 
 Cependant, n'oubliez pas qu'il est indispensable de visualiser les nuages de points pour ne pas tomber dans le piège mis en avant par le [jeu de données artificiel appelé “quartet d’Anscombe”](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/association-de-deux-variables.html#importance-des-graphiques) qui montre très bien comment des données très différentes peuvent avoir une même moyenne, une même variance et un même coefficient de corrélation. Un graphique de type matrice de nuages de points est tout indiqué ici.
 
@@ -244,7 +274,9 @@ chart(data = trees, volume ~ diameter) +
   labs( color = "Modèle")
 ```
 
-Nous observons bien sur le graphique que le modèle 4 est loin d'être le meilleur. **Nous pouvons en déduire que la somme des résidus n'est pas un bon critère pour ajuster un modèle linéaire.** Le problème lorsque nous sommons des résidus, est la présence de résidus positifs et de résidus négatifs (ici par rapport à `modèle-4`).
+##### À vous de jouer ! {-}
+
+`r h5p(196, height = 270, toc = "Qualité d'ajustement d'un modèle")`
 
 ```{r, echo = FALSE}
 yhat4 <- model_predict(slope = models$slope[4], intercept = models$intercept[4],
@@ -414,6 +446,10 @@ chart(data = trees, volume ~ diameter) +
   scale_color_viridis_c(direction = -1)
 ```
 
+##### À vous de jouer ! {-}
+
+`r h5p(197, height = 270, toc = "Ecriture de l'éqaution du modèle")`
+
 ### La fonction `lm()`
 
 Suite à notre découverte de manière intuitive de la régression linéaire simple, nous pouvons récapituler quelques points clés\ : 
@@ -470,6 +506,10 @@ Décider quel variable est réponse dans l'équation n'est donc pas anodin. Util
 S'il y a des conflits entre ces trois règles, traitez-les par priorité dans l'ordre indiqué ici\ : partitionnement de l'erreur > rôle dans l'expérience > prédiction.
 ```
 
+##### À vous de jouer ! {-}
+
+`r h5p(198, height = 270, toc = "La fonction lm()")`
+
 ### Résumé avec `summary()`
 
 Avec `summary()` nous obtenons un résumé condensé des informations les plus utiles pour chaque objet dans R. Dans le cas de l'objet `lm`, l'information renvoyée est très utile pour interpréter notre régression linéaire. 
@@ -502,6 +542,11 @@ Nous retrouvons également les écart-types calculés sur ces valeurs (*Std.Erro
 
 *Pour l'instant, nous nous contenterons d'interpréter et d'utiliser les informations issues de `summary()` dans sa partie supérieure. Le contenu des trois dernières lignes sera détaillé dans le module suivant.*
 
+##### À vous de jouer ! {-}
+
+`r h5p(199, height = 270, toc = "Analyse du résumé de l'objet lm.")`
+
+
 A partir des données de ce résumé, nous pouvons maintenant **paramétrer** l'équation de notre modèle\ :
 
 $$y = a \cdot x + b$$
@@ -532,6 +577,10 @@ lm. %>.%
   labs(x = "Fitted values", y = "Residuals") +
   ggtitle("Residuals vs Fitted")
 ```
+
+##### À vous de jouer ! {-}
+
+`r h5p(200, height = 270, toc = "Distribution homogène des résidus")`
 
 Le second graphique permet de vérifier la normalité des résidus (comparaison par graphique quantile-quantile à une distribution Normale).
 
@@ -694,10 +743,14 @@ Des snippets sont à votre disposition pour ces deux fonctions\ :
 
 ##### À vous de jouer ! {-}
 
+`r h5p(201, height = 270, toc = "Les fonctions tidy() et glance()")`
+
+##### À vous de jouer ! {-}
+
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("B01Ga_reglin1", part = NULL,
-    url = "https://github.com/BioDataScience-Course/B01Ga_reglin1",
+  assignation("B01Ia_21_reglin", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B01Ia_21_reglin",
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
