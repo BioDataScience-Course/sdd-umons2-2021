@@ -44,7 +44,7 @@ Les tutoriels `learnr` auxquels vous êtes maintenant habitués seront là pour 
 
 Réalisez le tutoriel ci-dessous afin de revoir une série de notions du cours de science des données 1.
 
-`r learnr("B01La_rappel", title = "Révision des notions de SDD I", toc = "Révision des notions de SDD I")`
+`r learnr("B01La_rappel", title = "Révision des notions de SDD I", toc = NULL)`
 
 ## Modèle 
 
@@ -162,7 +162,7 @@ plot(trees_corr, type = "lower")
 
 ##### À vous de jouer ! {-}
 
-`r h5p(195, height = 270, toc = "Les coefficient de corrélation")`
+`r h5p(195, height = 270, toc = "Les coefficients de corrélation")`
 
 Cependant, n'oubliez pas qu'il est indispensable de visualiser les nuages de points pour ne pas tomber dans le piège mis en avant par le [jeu de données artificiel appelé “quartet d’Anscombe”](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/association-de-deux-variables.html#importance-des-graphiques) qui montre très bien comment des données très différentes peuvent avoir une même moyenne, une même variance et un même coefficient de corrélation. Un graphique de type matrice de nuages de points est tout indiqué ici.
 
