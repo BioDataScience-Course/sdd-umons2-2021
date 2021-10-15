@@ -762,3 +762,7 @@ if (exists("assignation"))
 Ce premier module vous a permis de prendre connaissance des principes de bases de la modélisation et plus particulièrement de la régression linéaire. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("01", height = 800)`

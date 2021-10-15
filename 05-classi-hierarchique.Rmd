@@ -991,3 +991,7 @@ if (exists("assignation"))
 Ce cinquième module vous a permis de comprendre la classification hiérarchique. Il s'agit de la première méthode des statistiques exploratoires que vous venez de découvrir. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("05", height = 800)`

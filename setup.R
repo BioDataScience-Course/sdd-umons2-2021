@@ -49,7 +49,7 @@ learnitdown <- list(
 # `r show_ex_toc()`
 
 img <- function(..., caption = "") {
-  path <- paste(learnitdown$imgbaseurl, ..., collapse = "/")
+  path <- paste(learnitdown$imgbaseurl, ..., sep = "/")
   # Cannot use ` inside R code => use ''' instead
   caption <- gsub("'''", "`", caption)
   paste0("![", caption, "](", path, ")")
@@ -71,6 +71,21 @@ launch_shiny <- function(url, toc = "", fun = paste(learnitdown$package, "run_ap
     run.url = paste(learnitdown$baseurl, "/", learnitdown$rstudio,  "?runrcode=", sep = ""),
     app.img = "images/list-app.png",
     app.link = paste(learnitdown$baseurl, "shiny_app", sep = "/"), ...)
+
+launch_report <- function(module, course = "S-BIOG-015", toc = NULL, fun = NULL,
+  #ENalt1 = "*Click to see the progress report.*",
+  alt1 = "*Cliquez pour visualiser le rapport de progression.*",
+  #ENalt2 = "*Click to calculate your progress report for this module.*",
+  alt2 = "*Cliquez pour calculer votre rapport de progression pour ce module.*",
+  height = 800, ...)
+  learnitdown::launch_shiny(url =
+      paste0("https://sdd.umons.ac.be/sdd-progress-report?course=", course,
+        "&module=", module),
+    toc = toc, imgdir = learnitdown$shiny_imgdir,
+    fun = fun, alt1 = alt1, alt2 = alt2, toc.def = "Progress report {app}",
+    run.url = paste(learnitdown$baseurl, "/", learnitdown$rstudio,  "?runrcode=", sep = ""),
+    app.img = "images/list-app.png",
+    app.link = paste(learnitdown$baseurl, "shiny_app", sep = "/"), height = height, ...)
 
 # Note: not used yet!
 launch_learnr <- function(url, toc = "", fun = paste(learnitdown$package, "run", sep = "::"), ...)

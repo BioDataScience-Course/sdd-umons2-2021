@@ -1377,3 +1377,7 @@ if (exists("assignation"))
 Ce sixième module vous a permis de comprendre trois nouvelles techniques des statistiques exploratoires. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("06", height = 800)`
