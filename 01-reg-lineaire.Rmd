@@ -32,7 +32,7 @@ Vous devez aussi maîtriser les bases de Git et de GitHub (avoir un compte GitHu
 
 L'ensemble de ces outils a été abordé dans le premier module  et dans les annexes du cours précédents [SDD I](`r paste(learnitdown$baseurl, "sdd-umons", sep = "/")`).
 
-Outre les outils, ce cours s'appuie sur des notions  que nous avons déjà abordé dans le cours de [science des données biologiques partie 1]( `r paste(learnitdown$baseurl, "sdd-umons", sep = "/")` ) comme la réalisation de graphiques variées, l'analyse de la variance ou encore les associations entre les variables. 
+Outre les outils, ce cours s'appuie sur des notions  que nous avons déjà abordées dans le cours de [science des données biologiques partie 1]( `r paste(learnitdown$baseurl, "sdd-umons", sep = "/")` ) comme la réalisation de [graphiques en nuage de points](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/nuage-de-points.html) et de [graphiques quantile-quantile](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/graphique-quantile-quantile.html), [le test de Student](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/test-t-de-student.html), [l'analyse de la variance à un facteur](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/anova-%25C3%25A0-un-facteur.html) et [à deux facteurs](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/anova-%25C3%25A0-deux-facteurs.html) ou encore les [associations entre les variables](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/association-de-deux-variables.html). **Assurez-vous de revoir rapidement ces différentes parties du cours 1 avant d'entamer le présent module.**
 
 ##### À vous de jouer ! {-}
 
@@ -582,7 +582,7 @@ lm. %>.%
 
 `r h5p(200, height = 270, toc = "Distribution homogène des résidus")`
 
-Le second graphique permet de vérifier la normalité des résidus (comparaison par graphique quantile-quantile à une distribution Normale).
+Le second graphique permet de vérifier la **Normalité des résidus** (comparaison par graphique quantile-quantile à une distribution Normale).
 
 ```{r}
 #plot(lm., which = 2)
@@ -592,6 +592,10 @@ lm. %>.%
   geom_qq_line(colour = "darkgray") +
   labs(x = "Theoretical quantiles", y = "Standardized residuals") +
   ggtitle("Normal Q-Q")
+```
+
+```{block2, type='warning'}
+**Attention\ !** Le graphique quantile-qauntile a été abordé au premier cours de Science des Données Biologiques, mais il apparaît que de nombreux étudiants ne comprennent pas bien ce qu'il représente, ni ne savent comment l'utiliser dans le présent contexte. Assurez-vous d'avoir bien compris son mécanisme et retournez voir [l"explication dans le cours précédent](https://wp.sciviews.org/sdd-umons/?iframe=wp.sciviews.org/sdd-umons-2021/graphique-quantile-quantile.html).
 ```
 
 Le troisième graphique va standardiser les résidus, et surtout, en prendre la racine carrée. Cela a pour effet de superposer les résidus négatifs sur les résidus positifs. Nous y diagnostiquons beaucoup plus facilement des problèmes de *distribution* de ces résidus en complément de ce que le graphique quantile-quantile précédent montre. A nouveau, nous observons qu'une valeur influence fortement la régression en haut à droite sur le graphique.
