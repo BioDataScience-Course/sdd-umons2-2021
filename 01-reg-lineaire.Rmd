@@ -24,7 +24,7 @@ RStudio et (R) Markdown ne doivent plus avoir de secrets pour vous.
 
 `r h5p(190, height = 270, toc = NULL)`
 
-Vous devez aussi maîtriser les bases de Git et de GitHub (avoir un compte GitHub, savoir cloner un dépôt localement, travailler avec GitHub Desktop pour faire ses "commits", "push" et "pull"). 
+Vous devez aussi maîtriser les bases de Git et de GitHub (avoir un compte GitHub, savoir cloner un dépôt localement, travailler avec GitHub Desktop pour faire ses "commits", "pull" et "push"). 
 
 ##### À vous de jouer ! {-}
 
@@ -412,7 +412,7 @@ chart(data = trees, volume ~ diameter) +
   scale_color_viridis_c(direction = -1)
 ```
 
-**En résumé, nous avons maintenant une fonction objective qui quantifie la "distance globale" de la droite à tous nos points. La meilleure droite est celle qui minimise cette fonction objective. Il nous manque encore une technique pour trouver rapidement et efficacement la droite qui répond à ce critèrer.** 
+**En résumé, nous avons maintenant une fonction objective qui quantifie la "distance globale" de la droite à tous nos points. La meilleure droite est celle qui minimise cette fonction objective. Il nous manque encore une technique pour trouver rapidement et efficacement la droite qui répond à ce critère.** 
 
 Dans le cas particulier de la régression linéaire par les moindres carrés, les mathématiciens nous expliquent que la solution à notre problème s'obtient très facilement par un simple calcul. En effet, les paramètres $a$ et $b$ de la droite que nous recherchons sont directement calculables comme suit\ : 
 
@@ -486,7 +486,7 @@ chart(data = trees, volume ~ diameter) +
   scale_color_viridis_c(direction = -1)
 ```
 
-La fonction `lm()` crée un objet spécifique qui contient de nombreuses informations pour pouvoir ensuite analyser notre modèle linéaire. Afin de déterminer de quel objet il s'agit, vous pouvez utiliser `class()`. Ain si, nous voyons qyue `lm.` est un objet de classe `lm`\ :
+La fonction `lm()` crée un objet spécifique qui contient de nombreuses informations pour pouvoir ensuite analyser notre modèle linéaire. Afin de déterminer de quel objet il s'agit, vous pouvez utiliser `class()`. Ainsi, nous voyons que `lm.` est un objet de classe `lm`\ :
 
 ```{r}
 class(lm.)
@@ -704,9 +704,24 @@ Gardez toujours à l'esprit qu'il est possible que votre jeu de données donne u
 
 Le **principe de parcimonie** veut que l'on ne teste pas toutes les combinaisons possibles deux à deux des variables d'un gros jeu de données, mais que l'on restreigne les explorations à des relations qui ont un sens biologique afin de minimiser le risque d'obtenir une telle régression de manière fortuite.
 
+##### À vous de jouer ! {-}
+
+<!-- PhG - Attention: cette assignation GitHub (même le template) n'existe pas encore ! Elle est placée ici pour mémoire et pour concrétisation peut-être plus tard. Cet exercice a été réalisé individuellement et via Wooclap en réalité en 2020-2021. Il s'agit de B01Wb_residus. Mais je voudrais transformer cela plutôt en un mini-challenge ou un projet GitHub Classroom par paires à l'avenir. -->
+
+```{r, echo=FALSE, results='asis'}
+if (exists("assignation2"))
+  assignation2("B01Ga_residus", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B01Ga_residus",
+    course.urls = c(
+      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    toc = "Analyse des résidus d'une régression linéaire")
+```
+
+
 ### Enveloppe de confiance
 
-De même que l'on peut définir un intervalle de confiance dans lequel la moyenne d'un échantillon se situe avec une probabilité donnée, il est aussi possible de calculer et de tracer une **enveloppe de confiance** qui indique la région dans laquelle le "vrai" modèle se trouve avec une probabilité donnée (généralement, on choisi cette probabilité à 95%). Voici ce que cela donne en utilisant la fonction `stat_smooth()` pour ajouter cette enveloppe de confiance sur le graphique\ :
+De même que l'on peut définir un intervalle de confiance dans lequel la moyenne d'un échantillon se situe avec une probabilité donnée, il est aussi possible de calculer et de tracer une **enveloppe de confiance** qui indique la région dans laquelle le "vrai" modèle se trouve avec une probabilité donnée (généralement, on choisit cette probabilité à 95%). Voici ce que cela donne en utilisant la fonction `stat_smooth()` pour ajouter cette enveloppe de confiance sur le graphique\ :
 
 ```{r}
 lm. %>.% (function(lm, model = lm[["model"]], vars = names(model))
