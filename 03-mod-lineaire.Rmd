@@ -55,7 +55,7 @@ Donc, nous retrouvons bien au niveau du modèle mathématique sous-jacent que la
 - Variable **qualitative** pour l’ANOVA,
 - Variable **quantitative** pour la régression linéaire.
 
-Le calcul est, en réalité, identique en interne. Il est donc possible de généraliser ces deux approches en une seule appelée **modèle linéaire**, mais à condition d'utiliser une astuce pour modifier nos modèles afin qu'ils soient intercompatibles.
+Le calcul est, en réalité, identique en interne. Il est donc possible de généraliser ces deux approches en une seule appelée **modèle linéaire**, mais à condition d'utiliser une astuce pour modifier nos modèles afin qu'ils soient inter-compatibles.
 
 ### Modèle linéaire commun
 
@@ -213,7 +213,7 @@ Ce tableau est "brut de décoffrage". Voyez `help("babies", package = "UsingR")`
 # smoke = 0 (non), = 1 (oui), = 2 (jusqu'à grossesse),
 #       = 3 (plus depuis un certain temps) and = 9 (inconnu)
 babies %>.% select(., wt, wt1, smoke) %>.% # Garder seulement wt, wt1 & smoke
-  filter(., wt1 < 999, wt < 999, smoke < 9) %>.% # Eliminer les valeurs manquantes
+  filter(., wt1 < 999, wt < 999, smoke < 9) %>.% # Éliminer les valeurs manquantes
   mutate(., wt = wt * 0.02835) %>.% # Transformer le poids de livres en kg
   mutate(., wt1 = wt1 * 0.4536) %>.% # Idem de onces en kg
   mutate(., smoke = as.factor(smoke)) -> # S'assurer d'avoir une variable factor
@@ -350,7 +350,7 @@ Babies %>.%
   Babies2
 ```
 
-Si cela semble trop compliqué, vous pouvez aussi utiliser l'addins de réencodage dans R (`QUESTIONR` -> `Levels Recoding` or `Levels Ordering`). A présent que l'encodage de `smoke` est corrigé dans `Babies2`, nous pouvons modéliser à nouveau, mais cette fois-ci avec des contrastes de Helmert (notez la façon particulière de spécifier des contrastes différents de la valeur pas défaut pour une variable `factor`)\ :
+Si cela semble trop compliqué, vous pouvez aussi utiliser l'addin de réencodage dans R (`QUESTIONR` -> `Levels Recoding` or `Levels Ordering`). A présent que l'encodage de `smoke` est corrigé dans `Babies2`, nous pouvons modéliser à nouveau, mais cette fois-ci avec des contrastes de Helmert (notez la façon particulière de spécifier des contrastes différents de la valeur pas défaut pour une variable `factor`)\ :
 
 ```{r}
 Babies_lm3 <- lm(data = Babies2, wt ~ smoke + wt1,
@@ -464,11 +464,11 @@ Voilà, nous venons d'analyser et d'interpréter notre premier modèle linéaire
 `r learnr("B03La_mod_lin", title = "Modèle linéaire", toc = "Récapitulatif modèles linéaires")`
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B02Gc_urchin", part = NULL,
-    url = "https://github.com/BioDataScience-Course/B02G_urchin",
+if (exists("assignation2"))
+  assignation2("B02Ga_urchin", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/g/...", 
+      'S-BIOG-015' = "ttps://classroom.github.com/a/wqol1C5h", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
     toc = "Exercices pratiques sur le modèle linéaire avec urchin")
 ```
@@ -505,13 +505,13 @@ La transformation **logit** calcule alors\ : $\ln(y / (1 - y)) = \beta x$. Les s
 
 ### Exemple
 
-Continuons à analyser nos données concernant les bébés à la naissance. Un bébé prématuré est un bébé qui nait avant 37 semaines de grossesse. Dans notre jeu de données `Babies`, nous pouvons déterminer si un enfant est prématuré ou non (variable binaire) à partir de la variable `gestation`(en jours). Transformons nos données pour obtenir les variables d'intérêt.
+Continuons à analyser nos données concernant les bébés à la naissance. Un bébé prématuré est un bébé qui naît avant 37 semaines de grossesse. Dans notre jeu de données `Babies`, nous pouvons déterminer si un enfant est prématuré ou non (variable binaire) à partir de la variable `gestation`(en jours). Transformons nos données pour obtenir les variables d'intérêt.
 
 ```{r}
 SciViews::R
 babies <- read("babies", package = "UsingR")
 babies %>.% select(., gestation, smoke, wt1, ht, race, age) %>.%
-  # Eliminer les valeurs manquantes
+  # Éliminer les valeurs manquantes
   filter(., gestation < 999, smoke < 9, wt1 < 999, ht < 999, race < 99, age < 99) %>.%
   # Transformer wt1 en kg et ht en cm
   mutate(., wt1 = wt1 * 0.4536) %>.%
@@ -575,7 +575,7 @@ chart(data = Babies_prem, age ~ premat) +
   ylab("Age de la mère (an)")
 ```
 
-Il ne sembnle pas y avoir un effet flagrant. Voyons ce que donne le modèle (nous ne considérons pas les interactions possibles ici, mais cela doit être fait dans le cas de plusieurs effets significatifs au moins). Avec 4 variables explicatives, le modèle est déjà très complexe sans interactions. Nous serions trop ambitieux de vouloir ici ajuster un modèle complet\ !
+Il ne semble pas y avoir un effet flagrant. Voyons ce que donne le modèle (nous ne considérons pas les interactions possibles ici, mais cela doit être fait dans le cas de plusieurs effets significatifs au moins). Avec 4 variables explicatives, le modèle est déjà très complexe sans interactions. Nous serions trop ambitieux de vouloir ici ajuster un modèle complet\ !
 
 ```{r}
 # Modèle linéaire généralisé avec fonction de lien de type logit
@@ -590,22 +590,22 @@ Nous voyons que le résumé de l'objet `glm` est très similaire à celui d'un o
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("B03Ga_ovocyte", part = NULL,
-    url = "https://github.com/BioDataScience-Course/B03Ga_ovocyte",
+  assignation("B03Ia_ovocyte", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B03Ia_ovocyte",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-015' = "https://classroom.github.com/a/L_X1PWO0", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Exercices pratiques cadrés sur le modèle linéaire avec ovocyte")
+    toc = "Exercices pratiques cadrés sur le modèle linéaire généralisé avec ovocyte")
 ```
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B03Gb_human", part = NULL,
+if (exists("assignation2"))
+  assignation2("B03Gb_human", part = NULL,
     url = "https://github.com/BioDataScience-Course/B03Gb_human",
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Exercices pratiques libres sur le modèle linéaire avec human")
+    toc = "Exercices pratiques libres sur le modèle linéaire (généralisé) avec human")
 ```
 
 ## Récapitulatif des exercices
