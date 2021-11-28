@@ -20,13 +20,13 @@ SciViews::R
 
 ## Rendement photosynthétique
 
-Afin d'avoir un premier aperçu de ce qu'est une régression non linéaire par les moindres carrés et comment on la calcule dans R, nous allons résoudre un exemple concret. La posidonie (*Posidonia oceanica* (L.) Delile (1813)) est une plante à fleur marine qui forme des herbiers denses en mer Méditerranée. Ses feuilles sont particulièrement adaptées à l'utilisation de la lumière qui règne à quelques mètres en dessous de la surface où elle prospère en herbiers denses. (un mémoire portant sur l'[étude du diméthylsulfoniopropionate et du diméthylsulfoxyde chez *Posidonia oceanica* (L.) Delile (1813)](http://di.umons.ac.be/details.aspx?pub=82f7743a-4343-4aa3-84b1-ff92c6e4e4c3) a été réalisé au sein du service d'Écologie numérique).
+Afin d'avoir un premier aperçu de ce qu'est une régression non linéaire par les moindres carrés et comment on la calcule dans R, nous allons détailler un exemple concret. La posidonie *Posidonia oceanica* (L.) Delile (1813) est une plante à fleur marine qui forme des herbiers denses en mer Méditerranée. Ses feuilles sont particulièrement adaptées à l'utilisation de la lumière qui règne à quelques mètres en dessous de la surface où elle prospère en herbiers denses.
 
-![[Herbier de posidonies](http://www.futura-sciences.com/planete/dossiers/nature-posidonie-miracle-mediterranee-2006/)](images/sdd2_04/posido.png)
+![[Herbier de posidonies](http://www.futura-sciences.com/planete/dossiers/nature-posidonie-miracle-mediterranee-2006/)](images/sdd2_04/posido.jpg)
 
 Pour étudier le rendement de sa photosynthèse, c'est-à-dire la part du rayonnement lumineux reçu qui est effectivement utilisée pour initier la chaîne de transport d'électrons au sein de son photosystème II, nous pouvons utiliser un appareil spécialisé\ : le diving PAM.
 
-![[Diving PAM](https://www.walz.com/products/chl_p700/diving-pam-II/introduction.html)](https://www.walz.com/images/diving-pam-II/intro/diving-pam-II_01l.jpg)
+![[Diving PAM](https://www.walz.com/files/downloads/manuals/diving-pam-II/DIVING-PAM-II-Brochure.pdf)](images/sdd2_04/diving_pam.jpg)
 
 Cet appareil est capable de déterminer le taux de transfert des électrons (ETR en µmol électrons/m^2^/s) par l'analyse de la fluorescence réémise par la plante lorsque ses photosites sont excités par une lumière monochromatique pulsée [@diving_pam2018]. Une façon de déterminer la réponse de la plante en rendement photosynthétique en fonction de l'intensité de la lumière reçue est de mesurer successivement l'ETR pour différentes intensités de lumière. En anglais cela s'appelle la "Rapid Light Curve" ou RLC en abrégé. Comme toutes les longueurs d'ondes lumineuses ne sont pas utilisables par la chlorophylle, l'intensité lumineuse est exprimé dans une unité particulière, le "PAR" ou "Photosynthetically Active Radiation" en µmol photons/m^2^/s. Une RLC représente donc la variation de l'ERT en fonction des PAR^[Techniquement, l'ERT nécessite d'effectuer des mesures après stabilisation de la photosynthèse, ce qui prend plusieurs minutes. Donc, une courbe *rapide* est discutable de ce point de vue mais reste un outil utile en écophysiologie où la comparaison de différentes RLCs indique une changement de capacité photosynthétique de la plante.]. Une RLC typique commence par une relation quasi-linéaire aux faibles intensités, pour s'infléchir et atteindre un plateau de rendement maximum. Au delà, si l'intensité lumineuse augmente encore, des phénomènes de photoinhibition apparaissent et le rendement diminue dans une troisième phase. Voici une RLC mesurée à l'aide du diving PAM sur une feuille de *P. oceanica*.
 
@@ -81,7 +81,7 @@ $$ETR = ETR_{max} \cdot (1 - e^{-PAR \cdot \alpha/ETR_{max}}) \cdot e^{-PAR \cdo
 avec $PAR$ la variable indépendante, $ETR$, la variable dépendante, et $ETR_{max}$, $\alpha$ et $\beta$, les trois paramètres du modèle. $ETR_{max}$ est le rendement maximum possible, $\alpha$ est la pente de la partie initiale linéaire avant infléchissement vers le maximum et $\beta$ est le coefficient de photoinhibition.
 
 ```{block, type='note'}
-En matière de régression non linéaire, il est tout aussi important de bien comprendre les propriétés mathématiques de la fonction utilisée que de faire un choix judicieux du modèle. En particulier, il faut s'attacher à bien comprendre la signification (biologique) des paramètres du modèle. Non seulement, cela aide à en définir des valeurs intiales plausibles, mais c'est aussi indispensable pour pouvoir ensuite bien interpréter les résultats obtenus.
+En matière de régression non linéaire, il est tout aussi important de bien comprendre les propriétés mathématiques de la fonction utilisée que de faire un choix judicieux du modèle. En particulier, il faut s'attacher à bien comprendre la signification (biologique) des paramètres du modèle. Non seulement, cela aide à en définir des valeurs initiales plausibles, mais c'est aussi indispensable pour pouvoir ensuite bien interpréter les résultats obtenus.
 ```
 
 Nous pouvons facilement créer une fonction dans R qui représente ce modèle\ :
@@ -122,7 +122,7 @@ chart(data = rlc, etr ~ par) +
   stat_function(fun = as.function(rlc_nls))
 ```
 
-Ce modèle représente bien mieux le phénomène étudié, et il s'ajuste d'ailleurs beaucoup mieux également dans les données que notre polynome. Une comparaison sur base du critère d'Akaïke est également en faveur de ce dernier modèle non linéaire (pour rappel, plus la valeur est faible, mieux c'est)\ :
+Ce modèle représente bien mieux le phénomène étudié, et il s'ajuste d'ailleurs beaucoup mieux également dans les données que notre polynôme. Une comparaison sur base du critère d'Akaike est également en faveur de ce dernier modèle non linéaire (pour rappel, plus la valeur est faible, mieux c'est)\ :
 
 ```{r}
 AIC(rlc_lm, rlc_nls)
@@ -149,6 +149,8 @@ Il existe, en réalité, une autre raison pour laquelle nous pourrions être ame
 Nous appelons "fonction objective" la fonction qui quantifie la qualité de l'ajustement de sorte que plus le nombre renvoyé par cette fonction est petit, meilleur est l'ajustement. Cette fonction objective peut être définie librement, mais dans de nombreux cas, il s'agit du même critère que pour la régression linéaire par les moindres carrés, à savoir (considérant que la fonction $f$ que nous souhaitons ajuster a $k$ paramètres notés $p_1$, $p_2$, ..., $p_k$)\ :
 
 $$f_{obj}(p_{1},p_{2},...,p_{k})=\sum_{i=1}^{n}(y_{i}-f(x_{i,}p_{1},p_{2},...,p_{k}))^{2}=\sum_{i}(y_{i}-\hat{{y_{i}}})^{2}$$
+
+Notre fonction objective qui quantifie la qualité de l'ajustement du modèle est donc la somme des résidus ($y_i - \hat{y_i}$) élevés au carré.
 
 ### Calcul itératif
 
@@ -216,7 +218,7 @@ La convergence est considérée comme obtenue lorsque la différence de valeur d
 
 - `maxiter =` le nombre maximum d'itérations permises. Pour éviter de calculer à l'infini, nous arrêtons à cette valeur et décrétons que le calcul **n'a pas convergé**. La valeur pas défaut est de 50 itérations.
 
-- `tol = ` le niveau de tolérance pour décider que l'on a convergé. C'est lui notre seuil de tolérance ci-dessus. Par défaut, il vaut `1e-05`, soit 0,00001. C'est une valeur *relative*. Cela siginifie que la variation de la fonction objective ne doit pas être plus grande que cela *en valeur relative*, soit $|\frac{fobj_i - fobj_{i + 1}}{fobj_i}| < tol$.
+- `tol = ` le niveau de tolérance pour décider que l'on a convergé. C'est lui notre seuil de tolérance ci-dessus. Par défaut, il vaut `1e-05`, soit 0,00001. C'est une valeur *relative*. Cela signifie que la variation de la fonction objective ne doit pas être plus grande que cela *en valeur relative*, soit $|\frac{fobj_i - fobj_{i + 1}}{fobj_i}| < tol$.
 
 - ... d'autres arguments moins importants ici.
 
@@ -280,11 +282,11 @@ Les domaines les plus courants où des modèles non linéaires sont utilisés en
 
 ### Modèle de Michaelis-Menten
 
-La courbe de Michaelis-Menten est bien connue pour modéliser des cinétiques chimiques simples, enzymatiques en particulier. Son équation est\ :
+La courbe de Michaelis-Menten est bien connue pour modéliser des cinétiques chimiques simples, enzymatiques en particulier. Elle décrit la vitesse initiale d'une réaction chimique en fonction de la concentration des réactifs ou d'une enzyme selon le cas considéré. Son équation est\ :
 
 $$V = \frac{V_{max} \cdot conc}{K + conc}$$
 
-où $conc$ est la concentration des réactifs au début de la réaction, c'est-à-dire, en absence de produits de cette réaction en mol/L, $V$ est la vitesse de réaction en mol/min. Le modèle a deux paramètres $V_{max}$ la vitesse maximale asymptotique en mol/min et $K$ en mol/L correspondant à la concentration telle que la vitesse est la moitié de $V_{max}$. Dans R, il existe un modèle 'selfStart' facile à utiliser pour ajuster une courbe de type Michaelis-Menten. Il s'agit de la fonction `SSmicmen()`.
+où $conc$ est la concentration des réactifs ou de l'enzyme au début de la réaction, c'est-à-dire, en absence de produits de cette réaction en mol/L, $V$ est la vitesse de réaction en mol/L/min. Le modèle a deux paramètres $V_{max}$ la vitesse maximale asymptotique en mol/L/min et $K$ en mol/L correspondant à la concentration telle que la vitesse est la moitié de $V_{max}$. Dans R, il existe un modèle 'selfStart' facile à utiliser pour ajuster une courbe de type Michaelis-Menten. Il s'agit de la fonction `SSmicmen()`.
 
 Voici le graphique d'un modèle Michaelis-Menten avec $V_{max} = 1$ et $K = 0,4$. Le trait horizontal en `Vm = 1` représente la vitesse maximale possible (asymptote horizontale du modèle). Nous voyons que cette vitesse maximale n'est atteinte que très lentement ici, et il faudrait que l'axe des X s'étende beaucoup plus sur la droite pour l'observer.
 
@@ -296,7 +298,7 @@ micmen_data <- tibble(
 chart(data = micmen_data, v ~ conc) +
   geom_line() +
   xlab("Concentration [mol/L]") +
-  ylab("Vitesse [mol/min]") +
+  ylab("Vitesse [mol/L/min]") +
   geom_vline(xintercept = 0, col = "darkgray") +
   geom_hline(yintercept = c(0.5, 1), col = "gray", linetype = "dashed") +
   geom_vline(xintercept = 0.4, col = "gray", linetype = "dashed") +
@@ -313,12 +315,12 @@ Concernant les modèles utiles en chimie et biochimie, le modèle à compartimen
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("B04Ga_speed_reaction", part = NULL,
-    url = "https://github.com/BioDataScience-Course/B04Ga_speed-reaction",
+  assignation("B04Ia_speed_reaction", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B04Ia_speed-reaction",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-015' = "https://classroom.github.com/a/o7PG28iR", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Vitesse de réaction chimique - Exercice pratique cadré sur la régression non linéaire")
+    toc = "Vitesse de réaction chimique")
 ```
 
 ### Modèles de croissance
@@ -657,7 +659,7 @@ chart(data = tanaka_data, y ~ t) +
 
 ## Choix du modèle
 
-Le choix d'un modèle non linéaire fait intervenir des critères identiques à ceux d'un modèle linéaire (qualité d'ajustement évaluée par l'AIC, inspection visuelle de l'ajustement dans le nuage de points), mais il fait aussi intervenir une dimension supplémentaire\ : le choix de la fonction marthématique à ajuster. Comme nous venons de le voir au travers de quelques modèles courants en biologie, le nombre de fonctions mathématiques résultant en des formes similaire, par exemple de type sigmoïde, est grand. Ainsi, le choix de la meilleure fonction à utiliser dans un cas particulier est rendu plus difficile.
+Le choix d'un modèle non linéaire fait intervenir des critères identiques à ceux d'un modèle linéaire (qualité d'ajustement évaluée par l'AIC, inspection visuelle de l'ajustement dans le nuage de points), mais il fait aussi intervenir une dimension supplémentaire\ : le choix de la fonction mathématique à ajuster. Comme nous venons de le voir au travers de quelques modèles courants en biologie, le nombre de fonctions mathématiques résultant en des formes similaire, par exemple de type sigmoïde, est grand. Ainsi, le choix de la meilleure fonction à utiliser dans un cas particulier est rendu plus difficile.
 
 Nous allons illustrer l'ajustement d'une courbe non linéaire par le choix et l'ajustement d'un modèle de croissance dans un jeu de données en modélisant la croissance somatique de l'oursin *Paracentrotus lividus* [@grosjean2001]. Ce jeu de données est disponible dans le package `data.io`, sous le nom `urchin_growth`.
 
@@ -674,7 +676,7 @@ Le choix du meilleur modèle se fait grâce à deux critères\ :
 
 1. Les connaissances théoriques et *a priori* du modèle que l'on ajuste. En effet, il n'existe qu'un seul modèle linéaire, mais une infinité de modèles curvilinéaires qui peuvent s'ajuster dans les données. Le choix du meilleur modèle se fait en fonction de considérations sur le phénomène sous-jacent qui doivent se refléter dans les propriétés mathématiques de la courbe choisie. Par exemple, si on sait que la croissance est asymptotique vers une taille maximale, nous devrons choisir une courbe mathématique qui présente une asymptote horizontale à son maximum pour représenter au mieux le phénomène étudié.
 
-2. Le coefficient de détermination $R^2$ n'est pas calculé par R pour une régression non linéaire car sa validité est sujette à discussion entre les statisticiens (d'autres logiciels statistiques le calculent). Nous n'avons donc pas d'estimation de la qualité de l'ajustement par ce biais, comme dans le cas de la régression linéaire. Par contre, il est possible de calculer un autre critère plus fiable que nous avons déjà utilisé\ : le **critère d'Akaïke** (fonction `AIC()` dans R). Ce critère tient compte à la fois de la qualité d'ajustement et de la complexité du modèle, exprimée par le nombre de paramètres qu'il faut estimer. Plus le modèle est complexe, plus on peut s'attendre à ce qu'il s'ajuste bien aux données car il est plus flexible. Cependant, en ce domaine, la complexité n'est pas forcément un gage de qualité. On recherche plutôt un compromis entre meilleur ajustement et simplicité. Le critère d'information d'Akaiké quantifie précisément ce compromis, c'est-à-dire que le modèle qui a un AIC le plus faible est considéré comme le meilleur. Appliquons donc ce concept pour sélectionner le meilleur modèle de croissance pour décrire la croissance somatique de nos oursins après avoir sélectionné les modèles candidats les plus judicieux (modèle sigmoïdal avec asymptote horizontale au maximum).
+2. Le coefficient de détermination $R^2$ n'est pas calculé par R pour une régression non linéaire car sa validité est sujette à discussion entre les statisticiens (d'autres logiciels statistiques le calculent). Nous n'avons donc pas d'estimation de la qualité de l'ajustement par ce biais, comme dans le cas de la régression linéaire. Par contre, il est possible de calculer un autre critère plus fiable que nous avons déjà utilisé\ : le **critère d'Akaike** (fonction `AIC()` dans R). Ce critère tient compte à la fois de la qualité d'ajustement et de la complexité du modèle, exprimée par le nombre de paramètres qu'il faut estimer. Plus le modèle est complexe, plus on peut s'attendre à ce qu'il s'ajuste bien aux données car il est plus flexible. Cependant, en ce domaine, la complexité n'est pas forcément un gage de qualité. On recherche plutôt un compromis entre meilleur ajustement et simplicité. Le critère d'information d'Akaike quantifie précisément ce compromis, c'est-à-dire que le modèle qui a un AIC le plus faible est considéré comme le meilleur. Appliquons donc ce concept pour sélectionner le meilleur modèle de croissance pour décrire la croissance somatique de nos oursins après avoir sélectionné les modèles candidats les plus judicieux (modèle sigmoïdal avec asymptote horizontale au maximum).
 
 Notons toutefois que, comme les animaux sont mesurés aux mêmes âges, tous les 3 à 6 mois, certains points se superposent. Afin d'afficher tous les points, il est utile d'utiliser la fonction `geom_jitter()` à la place de `geom_point()` qui décale les points d'une valeur aléatoire pour éviter ces superpositions (l'argument `width =` indique le décalage maximum à appliquer). Voici ce que cela donne (en ajoutant également un titre avec formatage correct du nom en latin) \ :
 
@@ -712,7 +714,7 @@ urchins_plot +
   stat_function(fun = as.function(urchins_gomp), color = "red", size = 1)
 ```
 
-L'ajustement de cette fonction semble très bon, à l'oeil. Voyons ce qu'il en est d'autres modèles. Par exemple, une courbe logistique\ :
+L'ajustement de cette fonction semble très bon, à l’œil. Voyons ce qu'il en est d'autres modèles. Par exemple, une courbe logistique\ :
 
 ```{r}
 urchins_logis <- nls(data = urchins, diameter ~ SSlogis(age, Asym, xmid, scal))
@@ -730,13 +732,13 @@ urchins_plot +
 
 Notez que ici, la couleur a été incluse dans le "mapping" (argument `mapping = `) de `stat_function()` en l'incluant dans `aes()`. Cela change fondamentalement la façon dont la couleur est perçue par `ggplot2`. Dans ce cas-ci, la valeur est interprétée non comme une couleur à proprement parler, mais comme un niveau (une couche) à inclure dans le graphique et à reporter via une légende. Ensuite, à l'aide de `labs()` on change le titre de la légende relatif à la couleur par un nom plus explicite\ : "Modèle".
 
-Nous pouvons comparer ces modèles à l'aide du critère d'Akaïke.
+Nous pouvons comparer ces modèles à l'aide du critère d'Akaike.
 
 ```{r}
 AIC(urchins_gomp, urchins_logis)
 ```
 
-Comme on peut le voir clairement sur le graphe, la courbe logistique donne une autre solution, cette dernière est à peine moins bonne que le modèle de Gompertz, selon le critère d'Akaiké. Pourtant, la courbe est assez bien démarquée de celle de Gompertz. Essayons maintenant un modèle de Weibull. Ce modèle est plus complexe car il a quatre paramètres au lieu de trois pour les deux modèles précédents\ :
+Comme on peut le voir clairement sur le graphe, la courbe logistique donne une autre solution, cette dernière est à peine moins bonne que le modèle de Gompertz, selon le critère d'Akaike. Pourtant, la courbe est assez bien démarquée de celle de Gompertz. Essayons maintenant un modèle de Weibull. Ce modèle est plus complexe car il a quatre paramètres au lieu de trois pour les deux modèles précédents\ :
 
 ```{r}
 urchins_weib <- nls(data = urchins, diameter ~ SSweibull(age, Asym, Drop, lrc, pwr))
@@ -753,13 +755,13 @@ urchins_plot +
   labs(color = "Modèle")
 ```
 
-... et comparons à l'aide du critère d'Akaïke\ :
+... et comparons à l'aide du critère d'Akaike\ :
 
 ```{r}
 AIC(urchins_gomp, urchins_logis, urchins_weib)
 ```
 
-Ce modèle fait presque jeu égal avec le modèle de Gompertz en terme de critère d'Akaiké\ ; juste un tout petit peu mieux. En fait, les deux courbes sont pratiquement superposées l'une à l'autre, mais le modèle de Weibull à un démarrage de croissance plus lent au début, ce qui se reflète dans les données. Par contre, il est pénalisé par le fait que c'est un modèle plus complexe qui possède un paramètre de plus. L'un dans l'autre, le critère d'information d'Akaiké considère donc les deux modèles sur pratiquement le même plan du point de vue de la qualité de leurs ajustements respectifs.
+Ce modèle fait presque jeu égal avec le modèle de Gompertz en terme de critère d'Akaike\ ; juste un tout petit peu mieux. En fait, les deux courbes sont pratiquement superposées l'une à l'autre, mais le modèle de Weibull à un démarrage de croissance plus lent au début, ce qui se reflète dans les données. Par contre, il est pénalisé par le fait que c'est un modèle plus complexe qui possède un paramètre de plus. L'un dans l'autre, le critère d'information d'Akaike considère donc les deux modèles sur pratiquement le même plan du point de vue de la qualité de leurs ajustements respectifs.
 
 A ce stade, nous voudrions également essayer un autre modèle flexible à quatre paramètres\ : le modèle de Richards. Malheureusement, il n'existe pas de fonction 'SelfStart' dans R pour ce modèle. Nous sommes donc réduit "à mettre les mains dans le cambouis", à définir la fonction nous même, à trouver de bonnes valeurs de départ, etc. Voici comment définir la fonction\ :
 
@@ -795,13 +797,13 @@ urchins_plot +
   labs(color = "Modèle")
 ```
 
-... et comparons à l'aide du critère d'Akaïke\ :
+... et comparons à l'aide du critère d'Akaike\ :
 
 ```{r}
 AIC(urchins_gomp, urchins_logis, urchins_weib, urchins_rich)
 ```
 
-La courbe est très proche des modèles de Gompertz et Weibull aux jeunes âges, mais l'asymptote maximale est légèrement plus haute que pour les deux autres modèles (58 mm au lieu de 57 mm). Les trois courbes sont très, très proches l'une de l'autre. Le critère d'information d'Akaiké est marginalement moins bon pour le modèle de Richards que pour celui de Weibull, mais est tout juste meilleur que celui de Gompertz. En outre l'écart type pour le paramètre `x0` est plus conséquent en comparaison de sa valeur, ce qui démontre une certaine instabilité de la fonction par rapport à ce paramètre, et par conséquent, une incertitude dans son estimation. Pour cette raison, et pour la difficulté à l'ajuster, le modèle de Richards sera écarté dans notre cas au bénéfice du modèle de Weibull, voire de celui de Gompertz plus simple.
+La courbe est très proche des modèles de Gompertz et Weibull aux jeunes âges, mais l'asymptote maximale est légèrement plus haute que pour les deux autres modèles (58 mm au lieu de 57 mm). Les trois courbes sont très, très proches l'une de l'autre. Le critère d'information d'Akaike est marginalement moins bon pour le modèle de Richards que pour celui de Weibull, mais est tout juste meilleur que celui de Gompertz. En outre l'écart type pour le paramètre `x0` est plus conséquent en comparaison de sa valeur, ce qui démontre une certaine instabilité de la fonction par rapport à ce paramètre, et par conséquent, une incertitude dans son estimation. Pour cette raison, et pour la difficulté à l'ajuster, le modèle de Richards sera écarté dans notre cas au bénéfice du modèle de Weibull, voire de celui de Gompertz plus simple.
 
 Le choix final entre Gompertz ou Weibull dépend de l'usage que l'on veut faire du modèle. Si la simplicité du modèle est primordiale, nous garderons Gompertz. Si la croissance des petits oursins est un aspect important de l'analyse, nous garderons Weibull qui semble mieux s'ajuster aux données à ce niveau.
 
@@ -816,7 +818,7 @@ if (exists("assignation"))
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Croissance bactérienne - Exercices pratiques libres sur la régression non linéaire")
+    toc = "Croissance bactérienne")
 ```
 
 ## Récapitulatif des exercices
