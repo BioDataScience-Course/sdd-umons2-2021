@@ -101,7 +101,7 @@ summary(rlc_nls)
 
 La dernière ligne, "achieved convergence" indique que le modèle a pu être calculé. Nous avons un tableau des paramètres qui ressemble très fort à celui de la régression linéaire, y compris les tests *t* de Student sur chacun des paramètres. Nous obtenons `etr_max = 9.4`, `alpha = 0.33` et `beta = 0.0040`, mais d'après le test de Student ce dernier paramètre n'est **pas** significativement différent de zéro^[Il faut faire attention ici, cela peut aussi signifier que nous n'avons pas assez de points après le plateau pour pouvoir estimer correctement $\beta$\ !]. Pour l'instant, nous allons conserver ce modèle tel quel. Notre modèle paramétré donne donc\ :
 
-$$ETR = 9.4 \cdot (1 - e^{-PAR \cdot 0.33/9.3}) \cdot e^{-PAR \cdot 0.0040/9.3}$$
+$$ETR = 9.4 \cdot (1 - e^{-PAR \cdot 0.33/9.4}) \cdot e^{-PAR \cdot 0.0040/9.4}$$
 
 Voyons ce que cela donne sur le graphique. Nous utiliserons pour ce faire une petite astuce qui consiste à transformer l'objet `nls` obtenu en une fonction utilisable par `stat_function()` pour le graphique `ggplot2` réalisé à l'aide de `chart()`^[Il est également possible de l'utiliser avec `curve()` pour un graphique de base dans R.].
 
