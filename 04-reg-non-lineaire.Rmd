@@ -821,6 +821,34 @@ if (exists("assignation2"))
     toc = "Croissance bactérienne (par binômes)")
 ```
 
+## Challenge
+
+À l'issue de ce quatrième module consacré à la modélisation statistique, vous avez appris à ajuster différents modèles dans des jeux de données biologiques. Vous allez maintenant utiliser vos connaissances acquises ici pour vous mesurer individuellement les uns contre les autres dans un exercice chronométré. Mais attention, l'exercice n'est pas facile. Vous allez devoir ruser pour gagner des places dans le classement, et mettre en œuvre toutes les techniques étudiées jusqu'ici pour arriver aux meilleurs résultats\ ! Notez bien que n'importe lequel des modèles vus dans les modules 1 à 4 peut représenter la meilleure solution.
+
+##### À vous de jouer ! {-}
+
+```{r, echo=FALSE, results='asis'}
+if (exists("challenge"))
+  challenge("B04Ca_models", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B04Ca_models",
+    course.urls = c(
+      'S-BIOG-015' = "https://classroom.github.com/a/..."),
+    toc = "Challenge modélisation")
+```
+
+::: {.nocourse}
+Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré via Moodle...
+:::
+
+::: {.S-BIOG-015}
+Vous pouvez soumettre vos résultats pendant une période de temps précise via l'application ci-dessous\ :
+
+`r launch_shiny("https://sdd.umons.ac.be/B04Sa_models/", height = 800, delay = 20, toc = NULL, alt1 = "*Cliquez pour visualiser le classement.*", alt2 = "*Cliquez pour visualiser le classement.*")`
+
+<!-- <iframe width="780" height="800" frameborder="0" scrolling="auto" class="shiny-app" id=\"B04Sa_models\" src="https://sdd.umons.ac.be/B04Sa_models"></iframe> -->
+:::
+
+
 ## Récapitulatif des exercices
 
 Ce quatrième module vous a permis de comprendre les régressions non linéaires. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
