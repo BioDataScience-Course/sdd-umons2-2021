@@ -832,7 +832,7 @@ if (exists("challenge"))
   challenge("B04Ca_models", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Ca_models",
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/..."),
+      'S-BIOG-015' = "https://classroom.github.com/a/QyWgve1a"),
     toc = "Challenge modélisation")
 ```
 
