@@ -459,6 +459,36 @@ Ici le comportement des résidus est sain. Des petits écarts de la normalité s
 
 Voilà, nous venons d'analyser et d'interpréter notre premier modèle linéaire sous forme d'une ANCOVA.
 
+### Choix du modèle
+
+Un modèle linéaire constitué d'une variable dépendante numérique (*Y*) et de deux variables explicatives dont l'une est numérique (*X*) et l'autre qualitative (variable "factor" *F*) comme pour une ANCOVA, peut s'écrire de plusieurs façons différentes. Graphiquement, il s'agit d'ajuster des droites entre *X* et *Y* qui **diffèrent d'un niveau à l'autre** de la variable *F*.  Considérant que le facteur *F* est fixe et que les observations sont indépendante les unes des autres, nous avons essentiellement trois cas de figure (ici, une situation fictive où *F* n'a que deux modalités ou niveaux nommés "A" et "B")\ :
+
+- Les deux nuages de points sont parallèles l'un à l'autre. Les deux droites diffèrent donc seulement par un **décalage de l'ordonnée à l'origine**. La formule à considérer dans R est alors `Y ~ X + F`.
+
+```{r echo=FALSE}
+tibble(X = c(0, 3, 0, 3), Y = c(2, 5, 3, 6), F = c("A", "A", "B", "B")) %>.%
+  chart(data = ., Y ~ X %col=% F) +
+    geom_line()
+```
+
+- Les deux nuages de points s'allongent linéairement le long de **droites ayant des pentes différentes mais qui se croisent en _X_ = 0**. Les droites diffèrent donc **par leurs pentes** mais pas par leurs ordonnées à l'origine. Cela s'exprime par des **interactions entre _X_ et _F_** dans le modèle qui se notent `X:F` dans une formule. Nous écrirons donc notre modèle comme `Y = X + X:F`.
+
+```{r echo=FALSE}
+tibble(X = c(0, 3, 0, 3), Y = c(2, 5, 2, 6), F = c("A", "A", "B", "B")) %>.%
+  chart(data = ., Y ~ X %col=% F) +
+    geom_line()
+```
+
+- Les deux droites se croisent en un point quelconque différent de _X_ = 0. Les droites diffèrent *à la fois* par leurs pentes et par leurs ordonnées à l'origine. Le **modèle complet** sera alors utilisé. Dans R nous écrirons\ : `Y = X + F + X:F`. Une forme abrégée synonyme existe aussi\ : `Y = X * F`. Ces deux formules décrivent strictement le même modèle et sont interchangeables.
+
+```{r echo=FALSE}
+tibble(X = c(0, 3, 0, 3), Y = c(2, 6, 3, 5), F = c("A", "A", "B", "B")) %>.%
+  chart(data = ., Y ~ X %col=% F) +
+    geom_line()
+```
+
+En pratique, et surtout en cas de doute, vous pouvez commencer par ajuster le modèle complet. Ensuite vous analysez les différentes lignes du tableau issue de `summary()` appliqué à votre modèle. Vous déterminer si le test *t* de Student qui est réalisé sur chaque paramètre du modèle (H~0~: le paramètre vaut zéro, H~1~: le paramètre est différent de zéro) rejette l'hypothèse nulle de manière significative au seuil alpha choisi. Si pas, cela signifie que ce paramètre peut probablement être ignoré dans le modèle (c'est-à-dire, forcé à zéro dans l'équation) et vous pouvez alors passer sur une forme plus concise, soit le modèle sans interactions à droites parallèles, soit le modèle avec uniquement les interactions pour des droites qui se croisent à l'origine de l'axe des abscisses.
+
 ##### À vous de jouer ! {-}
 
 `r learnr("B03La_mod_lin", title = "Modèle linéaire", toc = "Récapitulatif modèles linéaires")`
