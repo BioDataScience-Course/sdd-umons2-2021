@@ -932,14 +932,20 @@ Tout ces calculs se généralisent facilement à trois, puis à N dimensions.
 
 `r learnr("B07La_pca", title = "Analyse en composantes principales", toc = "Analyse en composantes principales")`
 
-
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B07Ia_acp_afc", part = "I",
+if (exists("assignment"))
+  assignment("B07Ia_acp_afc", part = "I",
     url = "https://github.com/BioDataScience-Course/B07Ia_acp_afc",
+    course.ids = c(
+      'S-BIOG-015' = "B07Ia_21M_acp_afc", 
+      'S-BIOG-937-958-959' = "B07Ia_21C_acp_afc"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-015' = "2022-03-07 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2022-03-21 23:59:59"),
     toc = "Analyse en composantes principales et l'analyse factorielle des correspondances.")
 ```
 
@@ -1300,12 +1306,19 @@ Au final, l'AFC apparait donc comme une variante de l'ACP qui utilise la distanc
 ##### À vous de jouer ! {-}
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B07Ia_acp_afc", part = "II",
+if (exists("assignment"))
+  assignment("B07Ia_acp_afc", part = "II",
     url = "https://github.com/BioDataScience-Course/B07Ia_acp_afc",
+    course.ids = c(
+      'S-BIOG-015' = "B07Ia_21M_acp_afc", 
+      'S-BIOG-937-958-959' = "B07Ia_21C_acp_afc"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-015' = "2022-03-07 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2022-03-21 23:59:59"),
     toc = "Analyse en composantes principales et l'analyse factorielle des correspondances.")
 ```
 
@@ -1542,13 +1555,21 @@ Voilà pour ce très rapide tour d'horizon des différentes façons de manipuler
 **Note: Ce projet est un travail par groupe de 4 personnes. Ce projet est transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données.**
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("B07Ga_doubs", part = NULL,
+if (exists("assignment2"))
+  assignment2("B07Ga_doubs", part = NULL,
     url = "https://github.com/BioDataScience-Course/B07Ga_doubs",
+    course.ids = c(
+      'S-BIOG-015' = "B07Ga_21M_doubs", 
+      'S-BIOG-937-958-959' = "B07Ga_21C_doubs"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/g/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
-    toc = "Etude écologique sur le Doubs")
+    course.starts = c(
+      'S-BIOG-015' = "2022-03-07 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2022-03-21 23:59:59"),
+    toc = "Etude écologique sur le Doubs",
+    n = 2)
 ```
 
 ## Récapitulatif des exercices

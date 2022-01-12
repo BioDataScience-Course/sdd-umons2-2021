@@ -977,12 +977,19 @@ chart(complete)
 `r learnr("B05La_cah", title = "Matrices de distance et classification hiérarchique ascendante", toc = "Matrices de distance et CAH")`
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B05Ia_ligurian_sea", part = NULL,
+if (exists("assignment"))
+  assignment("B05Ia_ligurian_sea", part = NULL,
     url = "https://github.com/BioDataScience-Course/B05Ia_ligurian_sea",
+    course.ids = c(
+      'S-BIOG-015' = "B05Ia_21M_ligurian_sea", 
+      'S-BIOG-937-958-959' = "B05Ia_21C_ligurian_sea"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-015' = "2022-02-18 10:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2022-02-22 23:59:59"),
     toc = "Application de la classification ascendante hiérarchique")
 ```
 

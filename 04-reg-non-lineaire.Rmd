@@ -314,12 +314,19 @@ chart(data = micmen_data, v ~ conc) +
 Concernant les modèles utiles en chimie et biochimie, le modèle à compartiment de premier ordre permet de décrire la cinétique de transformation d'une substance au cours du temps. Voyez le modèle `?Ssfol`. Il peut servir par exemple pour déterminer la cinétique d'élimination d'une substance du sang après injection.
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B04Ia_speed_reaction", part = NULL,
-    url = "https://github.com/BioDataScience-Course/B04Ia_speed-reaction",
+if (exists("assignment"))
+  assignment("B04Ia_speed_reaction", part = NULL,
+    url = "https://github.com/BioDataScience-Course/B04Ia_speed_reaction",
+    course.ids = c(
+      'S-BIOG-015' = "B04Ia_21M_speed_reaction", 
+      'S-BIOG-937-958-959' = "B04Ia_21C_speed_reaction"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/o7PG28iR", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-015' = "2021-11-29 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-12-20 23:59:59"),
     toc = "Vitesse de réaction chimique")
 ```
 
@@ -812,13 +819,21 @@ Le choix final entre Gompertz ou Weibull dépend de l'usage que l'on veut faire 
 `r learnr("B04La_nls", title = "Modèles non-linéaires", toc = "Récapitulatif modèles non linéaires")`
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("B04Gb_bacterial_growth", part = NULL,
+if (exists("assignment2"))
+  assignment2("B04Gb_bacterial_growth", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Gb_bacterial_growth",
+    course.ids = c(
+      'S-BIOG-015' = "B04Gb_21M_bacterial_growth", 
+      'S-BIOG-937-958-959' = "B04Gb_21C_bacterial_growth"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/cj9NgLMG", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Croissance bactérienne (par binômes)")
+    course.starts = c(
+      'S-BIOG-015' = "2021-11-29 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-12-20 23:59:59"),
+    toc = "Croissance bactérienne (par binômes)",
+    n = 2)
 ```
 
 ## Challenge
@@ -831,8 +846,14 @@ if (exists("assignation2"))
 if (exists("challenge"))
   challenge("B04Ca_models", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Ca_models",
+    course.ids = c(
+      'S-BIOG-015' = "B04Ca_21M_models"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/QyWgve1a"),
+    course.starts = c(
+      'S-BIOG-015' = "2021-12-06 10:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-12-06 13:00:00"),
     toc = "Challenge modélisation")
 ```
 

@@ -50,7 +50,7 @@ install.packages(c("knitr", "bookdown", # The bases!
   "viridis"
 ))
 
-# From Github (latest devel version)
+# From GitHub (latest devel version)
 devtools::install_github("SciViews/flow")
 devtools::install_github("SciViews/data.io")
 devtools::install_github("SciViews/chart")

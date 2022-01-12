@@ -706,16 +706,25 @@ Le **principe de parcimonie** veut que l'on ne teste pas toutes les combinaisons
 
 ##### À vous de jouer ! {-}
 
-<!-- PhG - Attention: cette assignation GitHub (même le template) n'existe pas encore ! Elle est placée ici pour mémoire et pour concrétisation peut-être plus tard. Cet exercice a été réalisé individuellement et via Wooclap en réalité en 2020-2021. Il s'agit de B01Wb_residus. Mais je voudrais transformer cela plutôt en un mini-challenge ou un projet GitHub Classroom par paires à l'avenir. -->
+<!-- PhG - Attention: ce travail GitHub (même le template) n'existe pas encore ! Elle est placée ici pour mémoire et pour concrétisation peut-être plus tard. Cet exercice a été réalisé individuellement et via Wooclap en réalité en 2020-2021. Il s'agit de B01Wb_residus. Mais je voudrais transformer cela plutôt en un mini-challenge ou un projet GitHub Classroom par paires à l'avenir. -->
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("B01Ga_residus", part = NULL,
+if (exists("assignment2"))
+  assignment2("B01Ga_residus", part = NULL,
     url = "https://github.com/BioDataScience-Course/B01Ga_residus",
+    course.ids = c(
+      'S-BIOG-015' = "B01Ga_21M_residus", 
+      'S-BIOG-937-958-959' = "B01Ga_21C_residus"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Analyse des résidus d'une régression linéaire")
+    course.starts = c(
+      'S-BIOG-015' = "2021-10-18 13:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-10-18 16:00:00"),
+    n = 2,
+    toc = "Analyse des résidus d'une régression linéaire",
+    clone = FALSE)
 ```
 
 
@@ -767,13 +776,25 @@ Des snippets sont à votre disposition pour ces deux fonctions\ :
 ##### À vous de jouer ! {-}
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B01Ia_21_reglin", part = NULL,
+if (exists("assignment"))
+  assignment("B01Ia_reglin", part = NULL,
     url = "https://github.com/BioDataScience-Course/B01Ia_21_reglin",
+    course.ids = c(
+      'S-BIOG-015' = "B01Ia_21M_reglin", 
+      'S-BIOG-937-958-959' = "B01Ia_21C_reglin",
+      'sdd2late' = "B01Ia_21M_reglin"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/H4naiWlc", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    toc = "Utilisation de la régression linéaire simple")
+      'S-BIOG-937-958-959' = "https://classroom.github.com/a/...",
+      'sdd2late' = "https://classroom.github.com/a/H4naiWlc"),
+    course.starts = c(
+      'S-BIOG-015' = "2021-10-18 08:00:00", 
+      'S-BIOG-937-958-959' = NA,
+      'sdd2late' = "2021-10-18 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-11-01 23:59:59", 
+      'sdd2late' = "2021-11-15 23:59:59"),
+    toc = "Régression linéaire simple")
 ```
 
 ## Récapitulatif des exercices

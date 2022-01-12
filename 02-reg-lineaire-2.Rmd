@@ -188,12 +188,19 @@ Au travers de cet exemple, nous constatons que la comparaison de modèles, dans 
 ##### À vous de jouer ! {-}
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B02Ia_anscombe", part = NULL,
+if (exists("assignment"))
+  assignment("B02Ia_anscombe", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ia_anscombe",
+    course.ids = c(
+      'S-BIOG-015' = "B02Ia_21M_anscombe", 
+      'S-BIOG-937-958-959' = "B02Ia_21C_anscombe"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/niVlWfpm", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-015' = "2021-11-03 13:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-11-19 23:59:59"),
     toc = "Quartet d’Anscombe")
 ```
 
@@ -485,23 +492,38 @@ L'erreur moyenne d'estimation du volume de bois passe de 0,07 m^3^ pour le modè
 `r learnr("B02Lb_reg_poly", title = "Régression linéaire polynomiale", toc = "Régression linéaire polynomiale")`
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("B02Ib_achatina", part = NULL,
+if (exists("assignment"))
+  assignment("B02Ib_achatina", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ib_achatina",
+    course.ids = c(
+      'S-BIOG-015' = "B02Ib_21M_achatina", 
+      'S-BIOG-937-958-959' = "B02Ib_21C_achatina"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/67rYDHzR", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-015' = "2021-11-03 13:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-11-15 23:59:59"),
     toc = "Utilisation de la régression linéaire (achatina)")
 ```
 
 ```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("B02Ga_urchin", part = NULL,
+if (exists("assignment2"))
+  assignment2("B02Ga_urchin", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
+    course.ids = c(
+      'S-BIOG-015' = "B02Ga_21M_urchin", 
+      'S-BIOG-937-958-959' = "B02Ga_21C_urchin"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/wqol1C5h", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
-    toc = "Régressions linéaires libres en binômes (urchin)")
+    course.starts = c(
+      'S-BIOG-015' = "2021-11-04 13:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = "2021-11-15 23:59:59"),
+    toc = "Régressions linéaires libres en binômes (urchin)",
+    n = 2)
 ```
 
 ## Récapitulatif des exercices
