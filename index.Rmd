@@ -160,7 +160,7 @@ if (exists("assignment2"))
     toc = "Poser ses questions dans une issue.", n = 100,
     texts = learnitdown::assignment2_fr(
       title = "Rejoignez l'assignation",
-      course = "Assignation GitHub Classroom d\u00e9di\u00e9e aux issues pour les \u00e9tudiants inscrits au cours de", 
+      course = "**[Assignation GitHub Classroom d\u00e9di\u00e9e aux issues pour les \u00e9tudiants inscrits au cours de {course_name}]({url}){{target=\"_blank\"}}**", 
       alt = "Les issues ne sont pas accessibles aux \u00e9tudiants externes."))
 ```
 
