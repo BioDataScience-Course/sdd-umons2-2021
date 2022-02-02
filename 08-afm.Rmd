@@ -438,7 +438,7 @@ Nous voyons ici que le traitement sous forme ACP ou sous forme AFC (pour le comp
 
 `r learnr("B08La_mfa", title = "Analyse factorielle multiple", toc = "Analyse factorielle multiple")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B08Ia_mfa_I, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B08Ia_mfa", part = "I",
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
@@ -449,9 +449,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-03-21 15:00:00"),
+      'S-BIOG-015' = !"{W[28]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-04-21 23:59:59"),
+      'S-BIOG-015' = !"{W[32]+5} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Analyse factorielle multiple sur la présence d'oiseaux dans les Alpes françaises.")
 ```
 
@@ -761,7 +762,7 @@ Comme vous venez de le voir, Zenodo de part sa structuration permet de remplir t
 ##### À vous de jouer ! {-}
 
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B08Ia_mfa_II, echo=FALSE, results='asis'}
 if (exists("assignment"))
     assignment("B08Ia_mfa", part = "II",
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
@@ -772,9 +773,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-03-21 15:00:00"),
+      'S-BIOG-015' = !"{W[28]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-04-21 23:59:59"),
+      'S-BIOG-015' = !"{W[32]+5} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Réflexion sur l'Open Data")
 ```
 

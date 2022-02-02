@@ -337,7 +337,7 @@ Cet [article](https://www.r-bloggers.com/the-complete-guide-to-clustering-analys
 
 `r learnr("B06La_kmeans", title = "Partitionnement par k-moyennes", toc = "Partitionnement par k-moyennes")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B06Ia_fish_market_I, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B06Ia_fish_market", part = "I",
     url = "https://github.com/BioDataScience-Course/B06Ia_fish_market",
@@ -348,9 +348,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-02-21 15:00:00"),
+      'S-BIOG-015' = !"{W[24]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-03-07 23:59:59"),
+      'S-BIOG-015' = !"{W[26]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Analyse multivarée sur 7 poissons couramment pêchés.")
 ```
 
@@ -780,7 +781,7 @@ Restez toujours attentif à la taille du jeu de données que vous utilisez pour 
 
 `r learnr("B06Lb_mds", title = "Positionnement multidimensionnel (MDS)", toc = "Positionnement multidimensionnel (MDS)")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B06Ia_fish_market_II, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B06Ia_fish_market", part = "II",
     url = "https://github.com/BioDataScience-Course/B06Ia_fish_market",
@@ -791,9 +792,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-02-21 15:00:00"),
+      'S-BIOG-015' = !"{W[24]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-03-07 23:59:59"),
+      'S-BIOG-015' = !"{W[26]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Analyse multivarée sur 7 poissons couramment pêchés.")
 ```
 
@@ -1376,7 +1378,7 @@ Nous n'avons fait qu'effleurer les nombreuses possibilités des cartes auto-adap
 
 `r learnr("B06Lc_som", title = "Ordination et regroupement grâce aux cartes auto-adaptatives", toc = "Ordination et regroupement grâce aux cartes auto-adaptatives")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B06Ia_fish_market_III, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B06Ia_fish_market", part = "III",
     url = "https://github.com/BioDataScience-Course/B06Ia_fish_market",
@@ -1387,9 +1389,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-02-21 15:00:00"),
+      'S-BIOG-015' = !"{W[24]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-03-07 23:59:59"),
+      'S-BIOG-015' = !"{W[26]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Analyse multivarée sur 7 poissons couramment pêchés.")
 ```
 

@@ -932,7 +932,7 @@ Tout ces calculs se généralisent facilement à trois, puis à N dimensions.
 
 `r learnr("B07La_pca", title = "Analyse en composantes principales", toc = "Analyse en composantes principales")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B07Ia_acp_afc_I, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B07Ia_acp_afc", part = "I",
     url = "https://github.com/BioDataScience-Course/B07Ia_acp_afc",
@@ -943,9 +943,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-03-07 08:00:00"),
+      'S-BIOG-015' = !"{W[26]+1} 08:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-03-21 23:59:59"),
+      'S-BIOG-015' = !"{W[28]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Analyse en composantes principales et l'analyse factorielle des correspondances.")
 ```
 
@@ -1297,15 +1298,15 @@ Donc, lors du calcul du Chi^2^, nous passons par une étape de transformation du
 
 L'ACP va reprojetter les lignes du tableau (qui, rappelons-le, sont les différents niveaux d'une des deux variables qualitative étudiée) dans un espace réduit. Dans ce contexte, le graphique représentant les variables n'a pas grand intérêt, puique ces variables sont en réalité fictives, ou si vous préférez, "bricolées". Par contre, la position des individus les uns par rapport aux autres, et par rapport au centre d'inertie du graphique a une signification importante et interprétable.
 
-Enfin, comme il n'y a aucune raison *a priori* d'utiliser une variable en ligne et l'autre en colonne, nous pouvons également transposer la table de contingence (les lignes deviennent les colonnes et *vice versa*). Si nous réalisons une nouvelle ACP sur ce tableau transposé, nous allons reprojetter les niveaux de l'*autre* variable qualitative sur un autre espace réduit.
+Enfin, comme il n'y a aucune raison *a priori* d'utiliser une variable en ligne et l'autre en colonne, nous pouvons également transposer la table de contingence (les lignes deviennent les colonnes et *vice versa*). Si nous réalisons une nouvelle ACP sur ce tableau transposé, nous allons reprojeter les niveaux de l'*autre* variable qualitative sur un autre espace réduit.
 
 Si nous prenons le même nombre de composantes principales des deux côtés, nous aurons la même part de variance reprise dans les deux projections. De plus, nous pouvons *superposer* les deux représentations en faisant coïncider les deux centres d'inertie en {0, 0}. La difficulté, comme pour tout biplot, est d'arriver à mettre à l'échelle les points d'une représentation par rapport à ceux de l'autre. Cette mise à l'échelle permet d'interpréter les points de couleurs différentes conjointement\ : des points proches sur le biplot dénotent des *correspondances* entre les niveaux respectifs des deux variables étudiées, d'où le nom de la méthode, analyse factorielle des *correspondances*.
 
-Au final, l'AFC apparait donc comme une variante de l'ACP qui utilise la distance du Chi^2^ à la place de la distance euclidienne dans l'ACP classique, et qui reflète la symétrie du tableau de contingence (lignes/colonnes *versus* colonnes/lignes). Il en résulte la possiblité d'analyser ainsi des données qualitatives pour lesquelles la distance et la statistique du Chi^2^ ont précisément été inventées.
+Au final, l'AFC apparaît donc comme une variante de l'ACP qui utilise la distance du Chi^2^ à la place de la distance euclidienne dans l'ACP classique, et qui reflète la symétrie du tableau de contingence (lignes/colonnes *versus* colonnes/lignes). Il en résulte la possibilité d'analyser ainsi des données qualitatives pour lesquelles la distance et la statistique du Chi^2^ ont précisément été inventées.
 
 ##### À vous de jouer ! {-}
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B07Ia_acp_afc_II, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B07Ia_acp_afc", part = "II",
     url = "https://github.com/BioDataScience-Course/B07Ia_acp_afc",
@@ -1316,9 +1317,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-03-07 08:00:00"),
+      'S-BIOG-015' = !"{W[26]+1} 08:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-03-21 23:59:59"),
+      'S-BIOG-015' = !"{W[28]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Analyse en composantes principales et l'analyse factorielle des correspondances.")
 ```
 
@@ -1554,7 +1556,7 @@ Voilà pour ce très rapide tour d'horizon des différentes façons de manipuler
 
 **Note: Ce projet est un travail par groupe de 4 personnes. Ce projet est transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données.**
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B07Ga_doubs, echo=FALSE, results='asis'}
 if (exists("assignment2"))
   assignment2("B07Ga_doubs", part = NULL,
     url = "https://github.com/BioDataScience-Course/B07Ga_doubs",
@@ -1565,11 +1567,11 @@ if (exists("assignment2"))
       'S-BIOG-015' = "https://classroom.github.com/g/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-015' = "2022-03-07 08:00:00"),
+      'S-BIOG-015' = !"{W[26]+1} 08:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2022-03-21 23:59:59"),
-    toc = "Etude écologique sur le Doubs",
-    n = 2)
+      'S-BIOG-015' = !"{W[28]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Etude écologique sur le Doubs")
 ```
 
 ## Récapitulatif des exercices

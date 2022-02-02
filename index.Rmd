@@ -138,7 +138,7 @@ Votre progression au sein de exercices de chaque module est mis à votre disposi
 
 ### Plan du cours {-}
 
-Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. Ce document structure les attentes de vos encadrants. Veuillez consulter ce document attentivement. 
+Le plan du cours est une forme de contrat entre les étudiants et les encadrants. Ce document structure les attentes de vos encadrants. Veuillez lire ce document attentivement. 
 
 - [Plan du cours de Science des données biologiques II : années 2021-2022](https://github.com/BioDataScience-Course/BioDataScience-Common/blob/main/docs/plan_de_cours/sdd2_plan_cours_2021-2022.md) 
 
@@ -146,16 +146,17 @@ Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. 
 
 Toutes les questions relatives aux exercices sont à poser dans les issues GitHub dédiées à ce cours. Le lien GitHub Classroom ci-dessous vous permet de rejoindre cet espace de discussion.
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B00Ga_issues, echo=FALSE, results='asis'}
 if (exists("assignment2"))
   assignment2("B00Ga_issues", part = NULL, clone = FALSE,
     url = "https://github.com/BioDataScience-Course/sdd_issues",
     course.ids = c(
-      'S-BIOG-015' = "B00Ga_21M_issues",
-      'S-BIOG-937-958-959' = "B00Ga_21C_issues"),
+      'S-BIOG-015'         = !"B00Ga_{YY}M_issues",
+      'S-BIOG-937-958-959' = !"B00Ga_{YY}C_issues"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/g/m_6f0p-h",
+      'S-BIOG-015'         = "https://classroom.github.com/g/m_6f0p-h",
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    term = "", level = 0,
     toc = "Poser ses questions dans une issue.", n = 100,
     texts = learnitdown::assignment2_fr(
       title = "Rejoignez l'assignation",
@@ -165,6 +166,6 @@ if (exists("assignment2"))
 
 *Note : vos enseignants sont également accessibles par mail sdd@sciviews.org.*
 
-Une fois que vous avez rejoint l'équipe `B21`, il n'est plus nécessaire d'utiliser le lien GitHub Classroom vers ces issues. Vous pouvez retrouver directement ce dépôt via la bannière du site.
+Une fois que vous avez rejoint l'équipe **`r !"B{YY}"`**, il n'est plus nécessaire d'utiliser le lien GitHub Classroom vers ces issues. Vous pouvez retrouver directement les issues liées à ce dépôt via la bannière du site.
 
 ![](images/sdd2_00/issues.png)

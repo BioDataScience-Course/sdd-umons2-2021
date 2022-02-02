@@ -493,7 +493,7 @@ En pratique, et surtout en cas de doute, vous pouvez commencer par ajuster le mo
 
 `r learnr("B03La_mod_lin", title = "Modèle linéaire", toc = "Récapitulatif modèles linéaires")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B02Ga_urchin_II, echo=FALSE, results='asis'}
 if (exists("assignment2"))
   assignment2("B02Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
@@ -501,12 +501,12 @@ if (exists("assignment2"))
       'S-BIOG-015' = "B02Ga_21M_urchin", 
       'S-BIOG-937-958-959' = "B02Ga_21C_urchin"),
     course.urls = c(
-      'S-BIOG-015' = "ttps://classroom.github.com/a/wqol1C5h", 
+      'S-BIOG-015' = "https://classroom.github.com/a/wqol1C5h", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-015' = "2021-11-15 13:00:00"),
+      'S-BIOG-015' = !"{W[10]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2021-11-29 23:59:59"),
+      'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
     toc = "Exercices pratiques sur le modèle linéaire avec urchin",
     n = 2)
 ```
@@ -626,7 +626,7 @@ Nous voyons que le résumé de l'objet `glm` est très similaire à celui d'un o
 
 ##### À vous de jouer ! {-}
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B03Ia_ovocyte, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B03Ia_ovocyte", part = NULL,
     url = "https://github.com/BioDataScience-Course/B03Ia_ovocyte",
@@ -637,13 +637,14 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/L_X1PWO0", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2021-11-15 13:00:00"),
+      'S-BIOG-015' = !"{W[10]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2021-11-29 23:59:59"),
+      'S-BIOG-015' = !"{W[15]+1} 23:59:59"),
+    term = "Q1", level = 3,
     toc = "Exercices pratiques cadrés sur le modèle linéaire généralisé avec ovocyte")
 ```
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B03Gb_human, echo=FALSE, results='asis'}
 if (exists("assignment2"))
   assignment2("B03Gb_human", part = NULL,
     url = "https://github.com/BioDataScience-Course/B03Gb_human",
@@ -654,11 +655,11 @@ if (exists("assignment2"))
       'S-BIOG-015' = "https://classroom.github.com/a/UDiu0W69", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2021-11-15 13:00:00"),
+      'S-BIOG-015' = !"{W[10]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2021-11-29 23:59:59"),
-    toc = "Exercices libres par binome sur le modèle linéaire (généralisé) avec human",
-    n = 2)
+      'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 4, n = 2,
+    toc = "Exercices libres par binome sur le modèle linéaire (généralisé) avec human")
 ```
 
 ## Récapitulatif des exercices

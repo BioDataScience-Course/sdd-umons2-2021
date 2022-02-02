@@ -187,7 +187,7 @@ Au travers de cet exemple, nous constatons que la comparaison de modèles, dans 
 
 ##### À vous de jouer ! {-}
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B02Ia_anscombe, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B02Ia_anscombe", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ia_anscombe",
@@ -198,9 +198,10 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/niVlWfpm", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2021-11-03 13:00:00"),
+      'S-BIOG-015' = !"{W[8]+3} 13:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2021-11-19 23:59:59"),
+      'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
     toc = "Quartet d’Anscombe")
 ```
 
@@ -491,7 +492,7 @@ L'erreur moyenne d'estimation du volume de bois passe de 0,07 m^3^ pour le modè
 
 `r learnr("B02Lb_reg_poly", title = "Régression linéaire polynomiale", toc = "Régression linéaire polynomiale")`
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B02Ib_achatina, echo=FALSE, results='asis'}
 if (exists("assignment"))
   assignment("B02Ib_achatina", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ib_achatina",
@@ -502,15 +503,16 @@ if (exists("assignment"))
       'S-BIOG-015' = "https://classroom.github.com/a/67rYDHzR", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = "2021-11-03 13:00:00"),
+      'S-BIOG-015' = !"{W[8]+3} 13:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2021-11-15 23:59:59"),
+      'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
     toc = "Utilisation de la régression linéaire (achatina)")
 ```
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_B02Ga_urchin_I, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("B02Ga_urchin", part = NULL,
+  assignment2("B02Ga_urchin", part ="I",
     url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
     course.ids = c(
       'S-BIOG-015' = "B02Ga_21M_urchin", 
@@ -519,11 +521,11 @@ if (exists("assignment2"))
       'S-BIOG-015' = "https://classroom.github.com/a/wqol1C5h", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-015' = "2021-11-04 13:00:00"),
+      'S-BIOG-015' = !"{W[8]+4} 13:00:00"),
     course.ends = c(
-      'S-BIOG-015' = "2021-11-15 23:59:59"),
-    toc = "Régressions linéaires libres en binômes (urchin)",
-    n = 2)
+      'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 4, n = 2,
+    toc = "Régressions linéaires libres en binômes (urchin)")
 ```
 
 ## Récapitulatif des exercices
