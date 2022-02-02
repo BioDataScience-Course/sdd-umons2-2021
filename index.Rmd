@@ -156,6 +156,9 @@ if (exists("assignment2"))
     course.urls = c(
       'S-BIOG-015'         = "https://classroom.github.com/g/m_6f0p-h",
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
+    course.ends = c(
+      'S-BIOG-015'         = !"{W[53]+5} 23:59:59",
+      'S-BIOG-937-958-959' = !"{W[53]+6} 23:59:59"),
     term = "", level = 0,
     toc = "Poser ses questions dans une issue.", n = 100,
     texts = learnitdown::assignment2_fr(
