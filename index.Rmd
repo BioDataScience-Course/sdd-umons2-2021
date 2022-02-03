@@ -111,7 +111,7 @@ On peut schématiser ce mode d'apprentissage comme cela
 
 ![](images/sdd2_00/organisation1.png)
 
-A la fin, un examen est indispensable pour valider l'acquisition des concetps.
+A la fin, un examen est indispensable pour valider l'acquisition des concepts.
 
 Le cours de science des données I utilise une autre approche et se donne en classe inversée. Le schéma ci-dessous vous propose l'organisation d'un module du cours. Vous devrez donc préparer en distanciel chaque session de cours en présentiel. Lors de chaque heure de travail lié à ce cours vous serez donc **actif**. 
 
