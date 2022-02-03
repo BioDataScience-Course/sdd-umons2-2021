@@ -443,8 +443,8 @@ if (exists("assignment"))
   assignment("B08Ia_mfa", part = "I",
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
     course.ids = c(
-      'S-BIOG-015' = "B08Ia_21M_mfa", 
-      'S-BIOG-937-958-959' = "B08Ia_21C_mfa"),
+      'S-BIOG-015' = !"B08Ia_{YY}M_mfa", 
+      'S-BIOG-937-958-959' = !"B08Ia_{YY}C_mfa"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -453,7 +453,7 @@ if (exists("assignment"))
     course.ends = c(
       'S-BIOG-015' = !"{W[32]+5} 23:59:59"),
     term = "Q2", level = 3,
-    toc = "Analyse factorielle multiple sur la présence d'oiseaux dans les Alpes françaises.")
+    toc = "AFM sur oiseaux alpins")
 ```
 
 
@@ -767,8 +767,8 @@ if (exists("assignment"))
     assignment("B08Ia_mfa", part = "II",
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
     course.ids = c(
-      'S-BIOG-015' = "B08Ia_21M_mfa", 
-      'S-BIOG-937-958-959' = "B08Ia_21C_mfa"),
+      'S-BIOG-015' = !"B08Ia_{YY}M_mfa", 
+      'S-BIOG-937-958-959' = !"B08Ia_{YY}C_mfa"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),

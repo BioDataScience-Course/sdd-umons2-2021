@@ -318,15 +318,15 @@ if (exists("assignment"))
   assignment("B04Ia_speed_reaction", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Ia_speed_reaction",
     course.ids = c(
-      'S-BIOG-015' = "B04Ia_21M_speed_reaction", 
-      'S-BIOG-937-958-959' = "B04Ia_21C_speed_reaction"),
+      'S-BIOG-015'         = !"B04Ia_{YY}M_speed_reaction", 
+      'S-BIOG-937-958-959' = !"B04Ia_{YY}C_speed_reaction"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/o7PG28iR", 
+      'S-BIOG-015'         = "https://classroom.github.com/a/o7PG28iR", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[12]+1} 08:00:00"),
+      'S-BIOG-015'         = !"{W[12]+1} 08:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
+      'S-BIOG-015'         = !"{W[15]+5} 23:59:59"),
     term = "Q1", level = 3,
     toc = "Vitesse de réaction chimique")
 ```
@@ -824,8 +824,8 @@ if (exists("assignment2"))
   assignment2("B04Gb_bacterial_growth", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Gb_bacterial_growth",
     course.ids = c(
-      'S-BIOG-015' = "B04Gb_21M_bacterial_growth", 
-      'S-BIOG-937-958-959' = "B04Gb_21C_bacterial_growth"),
+      'S-BIOG-015' = !"B04Gb_{YY}M_bacterial_growth", 
+      'S-BIOG-937-958-959' = !"B04Gb_{YY}C_bacterial_growth"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/cj9NgLMG", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -834,7 +834,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
     term = "Q1", level = 4, n = 2,
-    toc = "Croissance bactérienne (par binômes)")
+    toc = "Croissance bactérienne")
 ```
 
 ## Challenge
@@ -848,7 +848,7 @@ if (exists("challenge"))
   challenge("B04Ca_models", part = NULL,
     url = "https://github.com/BioDataScience-Course/B04Ca_models",
     course.ids = c(
-      'S-BIOG-015' = "B04Ca_21M_models"),
+      'S-BIOG-015' = !"B04Ca_{YY}M_models"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/QyWgve1a"),
     course.starts = c(
@@ -859,15 +859,14 @@ if (exists("challenge"))
 ```
 
 ::: {.nocourse}
-Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré via Moodle...
+Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré•e via Moodle...
 :::
 
 ::: {.S-BIOG-015}
 Vous pouvez soumettre vos résultats pendant une période de temps précise via l'application ci-dessous\ :
 
-`r launch_shiny("https://sdd.umons.ac.be/B04Sa_models/", height = 800, delay = 20, toc = NULL, alt1 = "*Cliquez pour visualiser le classement.*", alt2 = "*Cliquez pour visualiser le classement.*")`
+`r launch_shiny("https://sdd.umons.ac.be/B04Ca_models/", height = 800, delay = 20, toc = NULL, alt1 = "*Cliquez pour visualiser le classement.*", alt2 = "*Cliquez pour visualiser le classement.*")`
 
-<!-- <iframe width="780" height="800" frameborder="0" scrolling="auto" class="shiny-app" id=\"B04Sa_models\" src="https://sdd.umons.ac.be/B04Sa_models"></iframe> -->
 :::
 
 

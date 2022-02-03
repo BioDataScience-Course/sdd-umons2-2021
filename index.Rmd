@@ -54,9 +54,7 @@ Cet ouvrage interactif est le second volume d'une série de trois ouvrages trait
 
 - [Bio-informatique et science des données II](http://applications.umons.ac.be/web/fr/pde/2021-2022/ue/US-B3-SCBIOC-940-C.htm) au troisième bachelier en Biologie en Faculté des Sciences à Charleroi en co-diplomation entre l'Université de Mons (UMONS) et l'Université Libre de Bruxelles (ULB), et dont le responsable est Raphaël Conotte
 
-La matière est divisée en 8 modules de 6h chacun en présentiel. Il nécessitera environ 8h (variable, en fonction de votre rythme et de votre technique d'apprentissage) en travail à domicile. **Cette matière fait suite au premier cours dont le contenu est considéré comme assimilé (voir [cours SDD I](https://wp.sciviews.org/sdd-umons){target='top'}).**
-
-<!-- A faire: un diagramme qui montre la relation entre ces différents modules, et avec les modules du cours 1 -->
+La matière est divisée en huit modules de 6h chacun en présentiel. Il nécessitera environ 8h (variable, en fonction de votre rythme et de votre technique d'apprentissage) en travail à domicile. **Cette matière fait suite au premier cours dont le contenu est considéré comme assimilé (voir [cours SDD I](https://wp.sciviews.org/sdd-umons){target='top'}).**
 
 Les quatre premiers modules du cours sont consacrés à la **modélisation**, un domaine particulièrement important de la science des données qui étend les concepts déjà vu au cours SDD I d'analyse de variance et de corrélation entre deux variables. Ces quatre modules formeront aussi un socle sur lequel nous pourrons élaborer les techniques d'apprentissage machine (classification supervisée), et puis ensuite l'apprentissage profond à la base de l'intelligence artificielle qui seront abordées plus tard dans le cours SDD III. Cette partie est dense, mais *ultra* importante\ !
 
@@ -107,7 +105,7 @@ Ce livre en ligne ainsi que tout le matériel pédagogique cité plus haut a ét
 
 ### Classe inversée & pédagogie active {-}
 
-Jusqu'à présent, la plus grande partie de vos cours vous ont été donné de manière classique. Vous avez donc suivi **passivement** un cours *ex cathedra* suivi par une séance d'exercice ou de travaux pratiques. 
+Jans la plus grande partie de vos cours vous avez donc suivi **passivement** un cours *ex cathedra* suivi par une séance d'exercice ou de travaux pratiques. 
 
 On peut schématiser ce mode d'apprentissage comme cela
 
@@ -142,9 +140,9 @@ Le plan du cours est une forme de contrat entre les étudiants et les encadrants
 
 - [Plan du cours de Science des données biologiques II : années 2021-2022](https://github.com/BioDataScience-Course/BioDataScience-Common/blob/main/docs/plan_de_cours/sdd2_plan_cours_2021-2022.md) 
 
-## Issues {-} 
+## Issues {.unnumbered #issues}
 
-Toutes les questions relatives aux exercices sont à poser dans les issues GitHub dédiées à ce cours. Le lien GitHub Classroom ci-dessous vous permet de rejoindre cet espace de discussion.
+Toutes les questions relatives aux exercices sont à poser dans les issues GitHub dédiées à ce cours.
 
 ```{r assign_B00Ga_issues, echo=FALSE, results='asis'}
 if (exists("assignment2"))
@@ -162,12 +160,12 @@ if (exists("assignment2"))
     term = "", level = 0,
     toc = "Poser ses questions dans une issue.", n = 100,
     texts = learnitdown::assignment2_fr(
-      title = "Rejoignez l'assignation",
-      course = "[Assignation GitHub Classroom d\u00e9di\u00e9e aux issues pour les \u00e9tudiants inscrits au cours de {course_name}]({course_url}){{target=\"_blank\"}}", 
+      title = "Rejoignez le projet",
+      course = "[Projet GitHub Classroom d\u00e9di\u00e9e aux issues pour les \u00e9tudiants inscrits au cours de {course_name}]({course_url}){{target=\"_blank\"}}", 
       alt = "Les issues ne sont pas accessibles aux \u00e9tudiants externes."))
 ```
 
-*Note : vos enseignants sont également accessibles par mail sdd@sciviews.org.*
+*Note : vos enseignants sont également accessibles par mail via sdd@sciviews.org.*
 
 Une fois que vous avez rejoint l'équipe **`r !"B{YY}"`**, il n'est plus nécessaire d'utiliser le lien GitHub Classroom vers ces issues. Vous pouvez retrouver directement les issues liées à ce dépôt via la bannière du site.
 

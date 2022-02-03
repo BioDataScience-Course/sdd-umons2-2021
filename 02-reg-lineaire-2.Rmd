@@ -192,8 +192,8 @@ if (exists("assignment"))
   assignment("B02Ia_anscombe", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ia_anscombe",
     course.ids = c(
-      'S-BIOG-015' = "B02Ia_21M_anscombe", 
-      'S-BIOG-937-958-959' = "B02Ia_21C_anscombe"),
+      'S-BIOG-015' = !"B02Ia_{YY}M_anscombe", 
+      'S-BIOG-937-958-959' = !"B02Ia_{YY}C_anscombe"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/niVlWfpm", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -497,8 +497,8 @@ if (exists("assignment"))
   assignment("B02Ib_achatina", part = NULL,
     url = "https://github.com/BioDataScience-Course/B02Ib_achatina",
     course.ids = c(
-      'S-BIOG-015' = "B02Ib_21M_achatina", 
-      'S-BIOG-937-958-959' = "B02Ib_21C_achatina"),
+      'S-BIOG-015' = !"B02Ib_{YY}M_achatina", 
+      'S-BIOG-937-958-959' = !"B02Ib_{YY}C_achatina"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/67rYDHzR", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -515,8 +515,8 @@ if (exists("assignment2"))
   assignment2("B02Ga_urchin", part ="I",
     url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
     course.ids = c(
-      'S-BIOG-015' = "B02Ga_21M_urchin", 
-      'S-BIOG-937-958-959' = "B02Ga_21C_urchin"),
+      'S-BIOG-015' = !"B02Ga_{YY}M_urchin", 
+      'S-BIOG-937-958-959' = !"B02Ga_{YY}C_urchin"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/wqol1C5h", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),

@@ -114,8 +114,8 @@ learnitdown <- list(
 #
 # `r show_ex_toc()`
 #
-# ... and at the end of the book, create the assignments.html/.csv files
-# `r create_assignments()`
+# Use `r learnitdown::clean_ex_toc()` at the beginning of index.Rmd to
+# make sure the ex dir is clean when the book compiles
 
 img <- function(..., caption = "") {
   path <- paste(learnitdown$imgbaseurl, ..., sep = "/")

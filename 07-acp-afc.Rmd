@@ -937,8 +937,8 @@ if (exists("assignment"))
   assignment("B07Ia_acp_afc", part = "I",
     url = "https://github.com/BioDataScience-Course/B07Ia_acp_afc",
     course.ids = c(
-      'S-BIOG-015' = "B07Ia_21M_acp_afc", 
-      'S-BIOG-937-958-959' = "B07Ia_21C_acp_afc"),
+      'S-BIOG-015' = !"B07Ia_{YY}M_acp_afc", 
+      'S-BIOG-937-958-959' = !"B07Ia_{YY}C_acp_afc"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -947,7 +947,7 @@ if (exists("assignment"))
     course.ends = c(
       'S-BIOG-015' = !"{W[28]+1} 23:59:59"),
     term = "Q2", level = 3,
-    toc = "Analyse en composantes principales et l'analyse factorielle des correspondances.")
+    toc = "ACP et AFC en pratique (I)")
 ```
 
 ##### Pour aller plus loin {-}
@@ -1311,8 +1311,8 @@ if (exists("assignment"))
   assignment("B07Ia_acp_afc", part = "II",
     url = "https://github.com/BioDataScience-Course/B07Ia_acp_afc",
     course.ids = c(
-      'S-BIOG-015' = "B07Ia_21M_acp_afc", 
-      'S-BIOG-937-958-959' = "B07Ia_21C_acp_afc"),
+      'S-BIOG-015' = !"B07Ia_{YY}M_acp_afc", 
+      'S-BIOG-937-958-959' = !"B07Ia_{YY}C_acp_afc"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -1321,7 +1321,7 @@ if (exists("assignment"))
     course.ends = c(
       'S-BIOG-015' = !"{W[28]+1} 23:59:59"),
     term = "Q2", level = 3,
-    toc = "Analyse en composantes principales et l'analyse factorielle des correspondances.")
+    toc = "ACP et AFC en pratique (II)")
 ```
 
 ##### Pour en savoir plus {-}
@@ -1561,8 +1561,8 @@ if (exists("assignment2"))
   assignment2("B07Ga_doubs", part = NULL,
     url = "https://github.com/BioDataScience-Course/B07Ga_doubs",
     course.ids = c(
-      'S-BIOG-015' = "B07Ga_21M_doubs", 
-      'S-BIOG-937-958-959' = "B07Ga_21C_doubs"),
+      'S-BIOG-015' = !"B07Ga_{YY}M_doubs", 
+      'S-BIOG-937-958-959' = !"B07Ga_{YY}C_doubs"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/g/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
@@ -1571,7 +1571,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-015' = !"{W[28]+1} 23:59:59"),
     term = "Q2", level = 4, n = 2,
-    toc = "Etude écologique sur le Doubs")
+    toc = "Étude écologique sur le Doubs")
 ```
 
 ## Récapitulatif des exercices

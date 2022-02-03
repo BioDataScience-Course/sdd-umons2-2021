@@ -498,8 +498,8 @@ if (exists("assignment2"))
   assignment2("B02Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
     course.ids = c(
-      'S-BIOG-015' = "B02Ga_21M_urchin", 
-      'S-BIOG-937-958-959' = "B02Ga_21C_urchin"),
+      'S-BIOG-015' = !"B02Ga_{YY}M_urchin", 
+      'S-BIOG-937-958-959' = !"B02Ga_{YY}C_urchin"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/wqol1C5h", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
@@ -507,7 +507,7 @@ if (exists("assignment2"))
       'S-BIOG-015' = !"{W[10]+1} 13:00:00"),
     course.ends = c(
       'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
-    toc = "Exercices pratiques sur le modèle linéaire avec urchin",
+    toc = "Modèle linéaire avec urchin (suite)",
     n = 2)
 ```
 
@@ -631,8 +631,8 @@ if (exists("assignment"))
   assignment("B03Ia_ovocyte", part = NULL,
     url = "https://github.com/BioDataScience-Course/B03Ia_ovocyte",
     course.ids = c(
-      'S-BIOG-015' = "B03Ia_21M_ovocyte", 
-      'S-BIOG-937-958-959' = "B03Ia_21C_ovocyte"),
+      'S-BIOG-015' = !"B03Ia_{YY}M_ovocyte", 
+      'S-BIOG-937-958-959' = !"B03Ia_{YY}C_ovocyte"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/L_X1PWO0", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -641,7 +641,7 @@ if (exists("assignment"))
     course.ends = c(
       'S-BIOG-015' = !"{W[15]+1} 23:59:59"),
     term = "Q1", level = 3,
-    toc = "Exercices pratiques cadrés sur le modèle linéaire généralisé avec ovocyte")
+    toc = "Modèle linéaire généralisé (ovocyte)")
 ```
 
 ```{r assign_B03Gb_human, echo=FALSE, results='asis'}
@@ -649,8 +649,8 @@ if (exists("assignment2"))
   assignment2("B03Gb_human", part = NULL,
     url = "https://github.com/BioDataScience-Course/B03Gb_human",
     course.ids = c(
-      'S-BIOG-015' = "B03Gb_21M_human", 
-      'S-BIOG-937-958-959' = "B03Gb_21C_human"),
+      'S-BIOG-015' = !"B03Gb_{YY}M_human", 
+      'S-BIOG-937-958-959' = !"B03Gb_{YY}C_human"),
     course.urls = c(
       'S-BIOG-015' = "https://classroom.github.com/a/UDiu0W69", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
@@ -659,7 +659,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-015' = !"{W[15]+5} 23:59:59"),
     term = "Q1", level = 4, n = 2,
-    toc = "Exercices libres par binome sur le modèle linéaire (généralisé) avec human")
+    toc = "Modèle linéaire simple et généralisé (human)")
 ```
 
 ## Récapitulatif des exercices
