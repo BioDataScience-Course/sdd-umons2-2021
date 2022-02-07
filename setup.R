@@ -5,15 +5,17 @@ learnitdown <- list(
     "https://filedn.com/lzGVgfOGxb6mHFQcRn9ueUb/sdd-umons2", # The base URL for external (big) images
   shiny_imgdir = "images/shinyapps",     # The Shiny image directory (screenshots)
   svbox = 2021,                          # The SciViews Box version used
-  rstudio = "start_rstudio2021.html",    # Run Rstudio from the box
+  rstudio = "start_rstudio2021.html",    # Run RStudio from the box
   package = "BioDataScience2",           # Associated package for the exercices
   institutions = "UMONS",                # Known institutions
   courses = c(
-    "S-BIOG-015",                        # SDD2 Q1 & (Q2 = S-BIOG-061, not used?)
+    "S-BIOG-015",                        # SDD2 Q1
+    "S-BIOG-061",                        # SDD2 Q2
     "S-BIOG-937-958-959"                 # SDD2 Charleroi
   ),
   courses_names = c(
-    "Science des Données Biologiques II à l'UMONS",
+    "Science des Données Biologiques II à l'UMONS (Q1 : modélisation)",
+    "Science des Données Biologiques II à l'UMONS (Q2 : analyse)",
     "Bioinformatique et Science des Données II à Charleroi"
   ),
   acad_year = "2021-2022",               # The academic year

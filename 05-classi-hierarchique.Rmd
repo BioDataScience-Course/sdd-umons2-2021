@@ -981,15 +981,19 @@ if (exists("assignment"))
   assignment("B05Ia_ligurian_sea", part = NULL,
     url = "https://github.com/BioDataScience-Course/B05Ia_ligurian_sea",
     course.ids = c(
-      'S-BIOG-015' = !"B05Ia_{YY}M_ligurian_sea", 
+      'S-BIOG-015' = !"B05Ia_{YY}M_ligurian_sea",
+      'S-BIOG-061' = !"B05Ia_{YY}M_ligurian_sea", 
       'S-BIOG-937-958-959' = !"B05Ia_{YY}C_ligurian_sea"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-015' = "https://classroom.github.com/a/jmzSEGBH",
+      'S-BIOG-061' = "https://classroom.github.com/a/jmzSEGBH", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[22]+2} 10:00:00"),
+      'S-BIOG-015' = !"{W[22]+2} 10:00:00",
+      'S-BIOG-061' = !"{W[22]+2} 10:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[24]+1} 23:59:59"),
+      'S-BIOG-015' = !"{W[24]+1} 23:59:59",
+      'S-BIOG-061' = !"{W[24]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Classification ascendante hiérarchique")
 ```
