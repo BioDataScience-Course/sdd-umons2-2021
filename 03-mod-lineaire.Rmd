@@ -495,7 +495,7 @@ En pratique, et surtout en cas de doute, vous pouvez commencer par ajuster le mo
 
 ```{r assign_B02Ga_urchin_II, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("B02Ga_urchin", part = "II",
+  assignment2("B03Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/B02Ga_urchin",
     course.ids = c(
       'S-BIOG-015' = !"B02Ga_{YY}M_urchin", 

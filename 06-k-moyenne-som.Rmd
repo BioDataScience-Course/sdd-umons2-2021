@@ -190,7 +190,7 @@ Le package {broom} contient trois fonctions complémentaires qui nous seront uti
 glance(zoo6_kmn)
 ```
 
-Si nous voulons déterminer la valeur optimale de *k*, pous pouvons utiliser `profile_k()` appliqué au jeu de données initial, ou à la composante `data` de notre objet `k_means` (spécifier éventuellemznt une valeur différente de celle par défaut pour l'argument `k.max = ` de la fonction, voir l'aide en ligne de `?factoextra::fviz_nbclust`)\ :
+Si nous voulons déterminer la valeur optimale de *k*, nous pouvons utiliser `profile_k()` appliqué au jeu de données initial, ou à la composante `data` de notre objet `k_means` (spécifier éventuellement une valeur différente de celle par défaut pour l'argument `k.max = ` de la fonction, voir l'aide en ligne de `?factoextra::fviz_nbclust`)\ :
 
 ```{r}
 profile_k(zoo6) # ou zoo6_kmn$data
@@ -342,15 +342,15 @@ if (exists("assignment"))
   assignment("B06Ia_fish_market", part = "I",
     url = "https://github.com/BioDataScience-Course/B06Ia_fish_market",
     course.ids = c(
-      'S-BIOG-015' = !"B06Ia_{YY}M_fish_market", 
+      'S-BIOG-061' = !"B06Ia_{YY}M_fish_market", 
       'S-BIOG-937-958-959' = !"B06Ia_{YY}C_fish_market"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-061' = "https://classroom.github.com/a/zo4SVCCt", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[24]+1} 15:00:00"),
+      'S-BIOG-061' = !"{W[24]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[26]+1} 23:59:59"),
+      'S-BIOG-061' = !"{W[26]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Analyse multivarée sur 7 poissons (I)")
 ```
@@ -786,15 +786,15 @@ if (exists("assignment"))
   assignment("B06Ia_fish_market", part = "II",
     url = "https://github.com/BioDataScience-Course/B06Ia_fish_market",
     course.ids = c(
-      'S-BIOG-015' = !"B06Ia_{YY}M_fish_market", 
+      'S-BIOG-061' = !"B06Ia_{YY}M_fish_market", 
       'S-BIOG-937-958-959' = !"B06Ia_{YY}C_fish_market"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-061' = "https://classroom.github.com/a/zo4SVCCt", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[24]+1} 15:00:00"),
+      'S-BIOG-061' = !"{W[24]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[26]+1} 23:59:59"),
+      'S-BIOG-061' = !"{W[26]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Analyse multivarée sur 7 poissons (II)")
 ```
@@ -1383,15 +1383,15 @@ if (exists("assignment"))
   assignment("B06Ia_fish_market", part = "III",
     url = "https://github.com/BioDataScience-Course/B06Ia_fish_market",
     course.ids = c(
-      'S-BIOG-015' = !"B06Ia_{YY}M_fish_market", 
+      'S-BIOG-061' = !"B06Ia_{YY}M_fish_market", 
       'S-BIOG-937-958-959' = !"B06Ia_{YY}C_fish_market"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-061' = "https://classroom.github.com/a/zo4SVCCt", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[24]+1} 15:00:00"),
+      'S-BIOG-061' = !"{W[24]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[26]+1} 23:59:59"),
+      'S-BIOG-061' = !"{W[26]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Analyse multivarée sur 7 poissons (III)")
 ```

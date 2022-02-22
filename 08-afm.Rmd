@@ -443,15 +443,15 @@ if (exists("assignment"))
   assignment("B08Ia_mfa", part = "I",
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
     course.ids = c(
-      'S-BIOG-015' = !"B08Ia_{YY}M_mfa", 
+      'S-BIOG-061' = !"B08Ia_{YY}M_mfa", 
       'S-BIOG-937-958-959' = !"B08Ia_{YY}C_mfa"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-061' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[28]+1} 15:00:00"),
+      'S-BIOG-061' = !"{W[28]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[32]+5} 23:59:59"),
+      'S-BIOG-061' = !"{W[32]+5} 23:59:59"),
     term = "Q2", level = 3,
     toc = "AFM sur oiseaux alpins")
 ```
@@ -767,15 +767,15 @@ if (exists("assignment"))
     assignment("B08Ia_mfa", part = "II",
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
     course.ids = c(
-      'S-BIOG-015' = !"B08Ia_{YY}M_mfa", 
+      'S-BIOG-061' = !"B08Ia_{YY}M_mfa", 
       'S-BIOG-937-958-959' = !"B08Ia_{YY}C_mfa"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/...", 
+      'S-BIOG-061' = "https://classroom.github.com/a/...", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-015' = !"{W[28]+1} 15:00:00"),
+      'S-BIOG-061' = !"{W[28]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[32]+5} 23:59:59"),
+      'S-BIOG-061' = !"{W[32]+5} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Réflexion sur l'Open Data")
 ```
