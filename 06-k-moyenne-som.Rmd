@@ -381,8 +381,8 @@ Nous vous épargnons ici les développements mathématiques qui mènent à la d�
 Dans R, il existe plus d'une dizaine de fonctions différentes pour réaliser le MDS. Afin de vous simplifier le travail et de pouvoir traiter votre MDS comme d'autres analyses similaires nous vous proposons les fonctions supplémentaires suivante. **Ces fonctions sont à copier-coller en haut de vos scripts R, ou dans un chunk de "setup" à l'intérieur de vos documents R Markdown/Notebook.** Dérouler la section "voir le code" pour découvrir la définition de ces fonctions.
 
 ```{r, class.source='hidden-code'}
-# mds for SciViews, version 1.0.0
-# Copyright (c) 2020-2021, Philippe Grosjean (phgrosjean@sciviews.org)
+# mds for SciViews, version 1.1.0
+# Copyright (c) 2020-2022, Philippe Grosjean (phgrosjean@sciviews.org)
 
 SciViews::R()
 library(broom)
@@ -423,28 +423,45 @@ plot.mds <- function(x, y, ...) {
   plot(data = points, mds2 ~ mds1,...)
 }
 
-autoplot.mds <- function(object, labels, ...) {
+autoplot.mds <- function(object, labels, col, ...) {
   points <- tibble::as_tibble(object$points, .name_repair = "minimal")
   colnames(points) <- paste0("mds", 1:ncol(points))
+  
+  if (!missing(col))
+    points$.colors <- col
   
   if (!missing(labels)) {
     if (length(labels) != nrow(points))
       stop("You must provide a character vector of length ", nrow(points),
         " for 'labels'")
     points$.labels <- labels
-    chart::chart(points, mds2 ~ mds1 %label=% .labels, ...) +
-      geom_point() +
-      ggrepel::geom_text_repel() +
-      coord_fixed(ratio = 1)
+    if (!missing(col)) {
+      chart::chart(points, mds2 ~ mds1 %col=% .colors %label=% .labels, ...) +
+        geom_point() +
+        ggrepel::geom_text_repel() +
+        coord_fixed(ratio = 1)
+    } else {# col not provided
+      chart::chart(points, mds2 ~ mds1 %label=% .labels, ...) +
+        geom_point() +
+        ggrepel::geom_text_repel() +
+        coord_fixed(ratio = 1)
+    }
+    
   } else {# Plot without labels
-    chart::chart(points, mds2 ~ mds1, ...) +
-      geom_point() +
-      coord_fixed(ratio = 1)
+    if (!missing(col)) {
+      chart::chart(points, mds2 ~ mds1 %col=% .colors, ...) +
+        geom_point() +
+        coord_fixed(ratio = 1)
+    } else {
+      chart::chart(points, mds2 ~ mds1, ...) +
+        geom_point() +
+        coord_fixed(ratio = 1)
+    }
   }
 }
 
-chart.mds <- function(data, labels, ..., type = NULL, env = parent.frame())
-  autoplot(data, labels = labels, type = type, ...)
+chart.mds <- function(data, labels, col, ..., type = NULL, env = parent.frame())
+  autoplot(data, labels = labels, col, type = type, ...)
 
 shepard <- function(dist, mds, p = 2)
   structure(MASS::Shepard(d = dist, x = mds$points, p = p),
@@ -671,7 +688,7 @@ veg_mds <- mds$metric(veg_dist)
 Ensuite, **troisième étape**, le but étant de visualiser les distances nous effectuons immédiatement un graphique comme suit\ :
 
 ```{r}
-chart(veg_mds, labels = veg$station)
+chart(veg_mds, labels = veg$station, col = veg$station)
 ```
 
 Ce graphique s'interprète comme suit\ :
