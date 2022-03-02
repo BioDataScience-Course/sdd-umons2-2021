@@ -784,7 +784,7 @@ Ici, nous pouvons constater que les deux critères sont bons. Nous pouvons donc 
 
 ```{block2, type='warning'}
 
-Restez toujours attentif à la taille du jeu de données que vous utilisez pour réaliser une MDS, en particuliers une MDS non métrique. Quelques centaines de lignes, ça dois passer, plusieurs dizaines de milliers ou plus, ça ne passera pas\ ! La limite dépend bien sûr de la puissance de votre ordinateur et de la quantité de mémoire vive disponible. Retenez toutefois que la quantité de calculs augmente drastiquement avec la taille du jeu de données à traiter.
+Restez toujours attentif à la taille du jeu de données que vous utilisez pour réaliser une MDS, en particuliers une MDS non métrique. Quelques centaines de lignes, cela dois passer, plusieurs dizaines de milliers ou plus, cela ne passera pas\ ! La limite dépend bien sûr de la puissance de votre ordinateur et de la quantité de mémoire vive disponible. Retenez toutefois que la quantité de calculs augmente drastiquement avec la taille du jeu de données à traiter.
 
 ```
 
@@ -867,7 +867,7 @@ library(kohonen) # Charge le package kohonen
 rect_grid_7_7 <- somgrid(7, 7, topo = "rectangular") # Crée la grille
 ```
 
-Il n'y a pas de graphique `chart` ou `ggplot2` dans le package {kohonen}. Nous utiliserons ici les graphiques de base de R. Pour visualiser la grille, il faut la transformer en un objet **kohonen**. Nous pouvons ajouter plein d'information sur la grille. Ici, nous rajoutons une propriété calculée à l'aide de `unit.distances()` qui est la distance des cellules de la carte par référence à la cellule centrale. Les cellules sont numérotées de 1 à *n* en partant en bas à gauche, en progressant le long de la ligne du bas vers la droite, et en reprenant à gauche à la ligne au dessus. Donc, la ligne du bas contient de gauche à droite les cellules n°1 à 7. La ligne au dessus contient les cellules n°8 à 14, et ainsi de suite. La cellule du centre de la grille en en 4^ème^ ligne en partant du bas et en position 4 sur cette ligne, soit trois lignes complètes plus quatre ($3*7+4=25$). C'est la cellule n°25.
+Il n'y a pas de graphique `chart` ou `ggplot2` dans le package {kohonen}. Nous utiliserons ici les graphiques de base de R. Pour visualiser la grille, il faut la transformer en un objet **kohonen**. Nous pouvons ajouter plein d'information sur la grille. Ici, nous rajoutons une propriété calculée à l'aide de `unit.distances()` qui est la distance des cellules de la carte par référence à la cellule centrale. Les cellules sont numérotées de 1 à *n* en partant en bas à gauche, en progressant le long de la ligne du bas vers la droite, et en reprenant à gauche à la ligne au dessus. Donc, la ligne du bas contient de gauche à droite les cellules n°1 à 7. La ligne au dessus contient les cellules n°8 à 14, et ainsi de suite. La cellule du centre de la grille en en quatrième ligne en partant du bas et en position 4 sur cette ligne, soit trois lignes complètes plus quatre ($3*7+4=25$). C'est la cellule n°25.
 
 ```{r}
 rect_grid_7_7 %>.%
@@ -909,7 +909,7 @@ Le résumé de l'objet ne nous donne pas beaucoup d'info. C'est normal. La techn
 plot(zoo_som, type = "changes")
 ```
 
-Ici, il semble que nous ne diminuons plus vraiment à partir de la 85^ème^ itération environ. Nous pouvons nous en convaincre en relançant l'analyse avec un plus grand nombre d'itérations (avec l'argument `rlen =` de `som()`).
+Ici, il semble que nous ne diminuons plus vraiment à partir de l'itération 85 environ. Nous pouvons nous en convaincre en relançant l'analyse avec un plus grand nombre d'itérations (avec l'argument `rlen =` de `som()`).
 
 ```{r}
 set.seed(954)

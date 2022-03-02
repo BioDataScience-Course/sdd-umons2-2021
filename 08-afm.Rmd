@@ -20,7 +20,7 @@ SciViews::R
 
 Jusqu'ici nous avons étudié différentes techniques pour explorer des données multivariées *soit* quantitatives (ACP), *soit* qualitatives (AFC). Nous n'avons pas abordé encore la question de données *mixtes* avec des tableaux qui contiennent *à la fois* des variables quantitatives et des données qualitatives.
 
-Une première approche consiste à convertir des variables afin d'homogénéiser le tableau. La conversion ne peut se faire qu'en dégradant l'information, soit dans le sens quantitatif continu -> quantitatif discret -> qualitatif ordonné -> qualitatif non ordonné -> binaire. Ainsi, dans un tableau contenant quelques variables quantitives, nous pouvons créer des classes pour convertir les variables quantitatives en qualitatives. C'est par exemple ce que nous faisons quand nous remplaçons les indices de masse corporelle IMC dans nos données de biométrie humaine (quantitatif) en classes (tableau des classes proposées par l'OMS^[OMS = Organisation Mondiale de la Santé, voir [ici](https://apps.who.int/bmi/index.jsp?introPage=intro_3.html).]).
+Une première approche consiste à convertir des variables afin d'homogénéiser le tableau. La conversion ne peut se faire qu'en dégradant l'information, soit dans le sens quantitatif continu -> quantitatif discret -> qualitatif ordonné -> qualitatif non ordonné -> binaire. Ainsi, dans un tableau contenant quelques variables quantitatives, nous pouvons créer des classes pour convertir les variables quantitatives en qualitatives. C'est par exemple ce que nous faisons quand nous remplaçons les indices de masse corporelle IMC dans nos données de biométrie humaine (quantitatif) en classes (tableau des classes proposées par l'OMS^[OMS = Organisation Mondiale de la Santé, voir [ici](https://apps.who.int/bmi/index.jsp?introPage=intro_3.html).]).
 
 | IMC [kg/m^2^]   | Classification OMS |
 |:---------------:|:------------------ |
@@ -230,7 +230,7 @@ Les jeux de données `marphy` et `marbio` dans le package R {pastecs} présenten
 
 Jusqu'à présent, nous avions utilisé ces deux tableaux séparément. Notre objectif ici est de les analyser ensemble. Nous allons commencer par considérer ces deux tableaux comme **quantitatifs**. Dans ce cas, l'AFM réalisera deux ACP, une par tableau. Ensuite, elle pondérera les données de chacun en fonction de la part de variance sur le premier axe respectif. Pour finir, elle réalisera une ACP globale avec toutes les données qui conservera la structure de chacun des deux tableaux initiaux grâce à la pondération appliquée en interne.
 
-Les données environementales dans `marphy` étant mesurées dans des unités différentes, nous les standardiserons. Concernant le plancton dans `marbio`, nous allons pondérer les espèces rares par rapport aux espèces abondantes en transformant $log(x + 1)$ les abondances observées avec la fonction `log1p()`. Enfin, nous rajouterons les différentes masses d'eaux identifiées par ailleurs (voir l'aide `?pastecs::marphy`) dans `marzones` que nous utiliserons comme troisième tableau de **variables supplémentaires** (un tableau que nous n'utilisons *pas* dans l'analyse, mais que nous représenterons dans les graphiques afin d'aider à leur interprétation). Voici donc la constitution d'un gros tableau qui reprend toutes les données dans la variable `mar`\ :
+Les données environnementales dans `marphy` étant mesurées dans des unités différentes, nous les standardiserons. Concernant le plancton dans `marbio`, nous allons pondérer les espèces rares par rapport aux espèces abondantes en transformant $log(x + 1)$ les abondances observées avec la fonction `log1p()`. Enfin, nous rajouterons les différentes masses d'eaux identifiées par ailleurs (voir l'aide `?pastecs::marphy`) dans `marzones` que nous utiliserons comme troisième tableau de **variables supplémentaires** (un tableau que nous n'utilisons *pas* dans l'analyse, mais que nous représenterons dans les graphiques afin d'aider à leur interprétation). Voici donc la constitution d'un gros tableau qui reprend toutes les données dans la variable `mar`\ :
 
 ```{r}
 marzones <- factor(c(
@@ -256,7 +256,7 @@ Ce tableau n'a aucunes valeurs manquantes et il contient 29 variables\ :
 names(mar)
 ```
 
-Il y a trois groupes distrincts\ :
+Il y a trois groupes distincts\ :
 
 - les 4 premières colonnes comme variables quantitatives continues pour l'**environnement**,
 - les 24 colonnes suivantes comme quantitatives pour le **plancton**,
@@ -270,7 +270,7 @@ Avant de pouvoir réaliser notre AFM, nous devons comprendre comment écrire la 
 2. Le `type` de variable considérée. Quatre types sont possibles. Les variables continues à standardiser avant d'être utilisées dans une ACP sont de type **s**. Les variables quantitative également à utiliser selon l'ACP mais *sans* standardisation sont de type **c**. Les données qualitatives assimilables à un tableau de contingence à double entrée (données de fréquences d'observations, dénombrements, etc.) sont de type **f** et seront traitées comme une AFC, et enfin, les variables qualitatives classiques sont de type **n** et seront traitées selon une analyse factorielle multiple AFM.
 3. Le `nom` que l'on veut donner à chaque groupe de variables pour l'identifier dans l'analyse.
 
-Un groupe est décrit dans la formule comme `n * type %as% nom` (donc avec les opérateurs `*` et `%as%`). Chaque groupe inclu dans l'analyse est précédé d'un signe plus `+` (le premier plus peut être omis de la formule). Les groupes supplémentaires (à soustraire à l'analyse) sont précédés d'un signe moins `-`. Et enfin, tous les groupes sont décrits à la droite de la formule, donc, après le `~`. 
+Un groupe est décrit dans la formule comme `n * type %as% nom` (donc avec les opérateurs `*` et `%as%`). Chaque groupe inclus dans l'analyse est précédé d'un signe plus `+` (le premier plus peut être omis de la formule). Les groupes supplémentaires (à soustraire à l'analyse) sont précédés d'un signe moins `-`. Et enfin, tous les groupes sont décrits à la droite de la formule, donc, après le `~`. 
 
 ##### À vous de jouer ! {-}
 
@@ -294,13 +294,13 @@ Le résumé de l'analyse renvoyé par `summary()` donne beaucoup d'information.
 summary(mar_mfa)
 ```
 
-Ne nous intéressons pour l'instant qu'au tableau `Eignenvalues` qui reprend les valeurs propres, c'est-à-dire, la part de variance sur les axes de l'ACP globale réalisée. Nous voyons qu'une vairance cumulée de 74% (`Cumulative % of var.`) est représentée sur les deux premiers axes `Dim.1` et `Dim.2`. Le graphe des éboulis nous représente la partition de la variance sur les différents axes comme pour l'ACP\ :
+Ne nous intéressons pour l'instant qu'au tableau `Eignenvalues` qui reprend les valeurs propres, c'est-à-dire, la part de variance sur les axes de l'ACP globale réalisée. Nous voyons qu'une variance cumulée de 74% (`Cumulative % of var.`) est représentée sur les deux premiers axes `Dim.1` et `Dim.2`. Le graphe des éboulis nous représente la partition de la variance sur les différents axes comme pour l'ACP\ :
 
 ```{r}
 chart$scree(mar_mfa, fill = "cornsilk")
 ```
 
-Ici, on voit très clairement que deux axes suffisent. La suite de l'analyse se fait à peu près comme une ACP, mais des données et graphes supplémentaires nous permet d'interpréter les groupes de variables les uns par rapport aux autres. Le graphique des variables s'obtient comme pour l'ACP avec `chart$loadings()`. Il est ic plus encombré car nous avons 28 variables. La direction des différents vecteurs par rapport aux dimensions de l'AFM et entre eux nous indique la corrélation directe (même sens), inverse (opposition), ou l'absence de corrélation (vecteurs orthogonaux). Ce graphique permet aussi d'orienter le plan de l'AFM pour nos graphiques ultérieurs.
+Ici, on voit très clairement que deux axes suffisent. La suite de l'analyse se fait à peu près comme une ACP, mais des données et graphes supplémentaires nous permet d'interpréter les groupes de variables les uns par rapport aux autres. Le graphique des variables s'obtient comme pour l'ACP avec `chart$loadings()`. Il est ici plus encombré car nous avons 28 variables. La direction des différents vecteurs par rapport aux dimensions de l'AFM et entre eux nous indique la corrélation directe (même sens), inverse (opposition), ou l'absence de corrélation (vecteurs orthogonaux). Ce graphique permet aussi d'orienter le plan de l'AFM pour nos graphiques ultérieurs.
 
 ```{r}
 chart$loadings(mar_mfa, choices = c(1, 2))
@@ -318,7 +318,7 @@ L'AFM est en fait un compromis réalisé entre des analyses indépendantes faite
 chart$axes(mar_mfa, choices = c(1, 2))
 ```
 
-Ce graphique est similaire au précédent, si ce n'est qu'au lieu de projetter les variables initiales dans le plan de l'AFM, il projette les composantes principales des différentes ACP séparées dans ce même plan. Il montre comment un *compromis* entre les différentes ACP est réalisé dans l'AFM globale. Ici, nous voyons que ce compromis est relativement proche de l'ACP plancton (Dim.1 et Dim.2 plancton en vert pointant dans la même direction que les axes de l'AFM). Nous voyons aussi qie les deux premières dimensions de l'ACP environnement (Dim.1 et Dim.2 environnement en rouge) pointent en oblique par rapport à ces mêmes axes. La variable supplémentaire zone est également projettée, mais elle est moins corrélée avec les autres axes (sauf sa Dim. 5 avec l'axe 1). 
+Ce graphique est similaire au précédent, si ce n'est qu'au lieu de projeter les variables initiales dans le plan de l'AFM, il projette les composantes principales des différentes ACP séparées dans ce même plan. Il montre comment un *compromis* entre les différentes ACP est réalisé dans l'AFM globale. Ici, nous voyons que ce compromis est relativement proche de l'ACP plancton (Dim.1 et Dim.2 plancton en vert pointant dans la même direction que les axes de l'AFM). Nous voyons aussi que les deux premières dimensions de l'ACP environnement (Dim.1 et Dim.2 environnement en rouge) pointent en oblique par rapport à ces mêmes axes. La variable supplémentaire zone est également projetée, mais elle est moins corrélée avec les autres axes (sauf sa Dim. 5 avec l'axe 1). 
 
 Tout comme pour l'ACP, nous pouvons maintenant interpréter le graphique dans l'espace des individus, normalement avec `chart$scores()`.
 
@@ -340,7 +340,7 @@ Les différentes zones sont bien individualisées, à l'exception de\ :
 
 Notez qu'on a une progression le long du transect de la gauche (Nice) vers le centre, puis vers le haut à droite (le front) et puis vers le bas à droite (Calvi).
 
-Si on interpète ce graphique des individus en fonction de l'orientation donnée sur base des variables, on peut dire que\ :
+Si on interprète ce graphique des individus en fonction de l'orientation donnée sur base des variables, on peut dire que\ :
 
 - Nice (zone périphérique) s'individualise très fort du reste, et c'est le plancton qui explique essentiellement cette différence avec les groupes identifiés tirant vers la gauche (GasteropodsLarvae, EchinodermLarvae, Cladocerans et Pteropods). Nice est aussi à une température et fluorescence moyenne.
 
@@ -356,7 +356,7 @@ Revenons sur la façon dans l'AFM est construite (le fameux "compromis"), et son
 chart$groups(mar_mfa, choices = c(1, 2))
 ```
 
-Ce graphique représente les groupes proches des axes dont ils sont responsables dans la structure générale de l'AFM. Nous voyons ici plancton proche de l'axe 1. Part contre, environnement est bien représenté (car il est loind du centre), mais est entre l'axe 1 et l'axes 2. Nous avons déjà noté cela précédemment.
+Ce graphique représente les groupes proches des axes dont ils sont responsables dans la structure générale de l'AFM. Nous voyons ici plancton proche de l'axe 1. Part contre, environnement est bien représenté (car il est loin du centre), mais est entre l'axe 1 et l'axes 2. Nous avons déjà noté cela précédemment.
 
 La variable supplémentaire zone est aussi représentée à proximité de la structure qui lui correspond le mieux. Nous voyons que zone est plus proche d'environnement, ce qui signifie que les masses d'eau sont plutôt structurées en rapport avec les variables environnementales qu'en rapport avec les communautés planctoniques. 
 
@@ -383,7 +383,7 @@ Ici, les deux premiers axes comptent pour 74,6% de variance cumulée. Le graphe 
 chart$scree(mar_mfa2, fill = "cornsilk")
 ```
 
-Le graphique des variables ne montre plus que celles relatives à l'ACP, donc seulement le groupe environnement. Les conclusions à leur sujet sont les mêmes, mais attention, le premier plan de la nouvelle AFM se présente en miroir haut-bas par rapport à notre première analyse^[Les ACP sont définies au signe près. or une inversion de signe dans une dimension a pour effet de faire apparaitre les graphiques en miroir.].
+Le graphique des variables ne montre plus que celles relatives à l'ACP, donc seulement le groupe environnement. Les conclusions à leur sujet sont les mêmes, mais attention, le premier plan de la nouvelle AFM se présente en miroir haut-bas par rapport à notre première analyse^[Les ACP sont définies au signe près. or une inversion de signe dans une dimension a pour effet de faire apparaître les graphiques en miroir.].
 
 ```{r}
 chart$loadings(mar_mfa2, choices = c(1, 2))
@@ -438,24 +438,43 @@ Nous voyons ici que le traitement sous forme ACP ou sous forme AFC (pour le comp
 
 `r learnr("B08La_mfa", title = "Analyse factorielle multiple", toc = "Analyse factorielle multiple")`
 
-```{r assign_B08Ia_mfa_I, echo=FALSE, results='asis'}
+```{r assign_B08Ia_mfa, echo=FALSE, results='asis'}
 if (exists("assignment"))
-  assignment("B08Ia_mfa", part = "I",
+  assignment("B08Ia_mfa", part = NULL,
     url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
     course.ids = c(
       'S-BIOG-061' = !"B08Ia_{YY}M_mfa", 
       'S-BIOG-937-958-959' = !"B08Ia_{YY}C_mfa"),
     course.urls = c(
-      'S-BIOG-061' = "https://classroom.github.com/a/...", 
+      'S-BIOG-061' = "https://classroom.github.com/a/gFTAJFW6", 
       'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-061' = !"{W[28]+1} 15:00:00"),
     course.ends = c(
-      'S-BIOG-061' = !"{W[32]+5} 23:59:59"),
+      'S-BIOG-061' = !"{W[29]+5} 23:59:59"),
     term = "Q2", level = 3,
     toc = "AFM sur oiseaux alpins")
 ```
 
+**Continuez votre projet par groupe de quatre sur l'étude de la rivière Doubs.**
+
+```{r assign_B07Ga_doubs_II, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("B07Ga_doubs", part = "II",
+    url = "https://github.com/BioDataScience-Course/B07Ga_doubs",
+    course.ids = c(
+      'S-BIOG-061' = !"B07Ga_{YY}M_doubs", 
+      'S-BIOG-937-958-959' = !"B07Ga_{YY}C_doubs"),
+    course.urls = c(
+      'S-BIOG-061' = "https://classroom.github.com/a/V9LRaz2i", 
+      'S-BIOG-937-958-959' = "https://classroom.github.com/g/..."),
+    course.starts = c(
+      'S-BIOG-061' = !"{W[26]+1} 08:00:00"),
+    course.ends = c(
+      'S-BIOG-061' = !"{W[37]+5} 23:59:59"),
+    term = "Q2", level = 4, n = 4,
+    toc = "Étude écologique sur le Doubs (II)")
+```
 
 ## Indices de biodiversité 
 
@@ -589,7 +608,7 @@ Dans R, l’indice qui est calculé avec la fonction `vegan::vegdist()` est un i
 
 $$ similarité = 1 – dissimilarité$$
 
-Regardons comment colculer l'indice de Jaccard pour nos cinq parcelles avec R\ :
+Regardons comment calculer l'indice de Jaccard pour nos cinq parcelles avec R\ :
 
 ```{r}
 1 - vegan::vegdist(bci_sub, method = "jaccard", binary = TRUE)
@@ -613,7 +632,7 @@ L'*"Open Data"* ou données ouvertes est un phénomène en pleine expansion. Vou
 
 ### Gestion des données
 
-Lors de la préparation d'une expérience, vous devez réfléchir à un plan d'expérience. Vous avez donc défini des protocoles d'expérience, le nombre de réplicas,... Vous devez cependant intégrer à votre réflexion, un plan de gestion de vos données. Dans ce plan, vous aurez à définir l'acquisition, la description ou encore le partage des données.
+Lors de la préparation d'une expérience, vous devez réfléchir à un plan d'expérience. Vous avez donc défini des protocoles d'expérience, le nombre de répliquas,... Vous devez cependant intégrer à votre réflexion, un plan de gestion de vos données. Dans ce plan, vous aurez à définir l'acquisition, la description ou encore le partage des données.
 
 #### Principe FAIR
 
@@ -706,7 +725,7 @@ Le contexte c'est\ :
 
 - un code unique et persistant associé aux données et au contexte,
 - une description du projet associée aux données,
-- des metadonnées riches (y compris un dictionnaire des données^[Vous avez déjà rédigé un dictionnaire des données lorsque vous avez planifié vos mesures concernant la biométrie humaine l'an dernier au cours de science des données biologiques I.]),
+- des métadonnées riches (y compris un dictionnaire des données^[Vous avez déjà rédigé un dictionnaire des données lorsque vous avez planifié vos mesures concernant la biométrie humaine l'an dernier au cours de science des données biologiques I.]),
 - la licence associée aux données
 
 Dans le cadre de vos futures recherches, un outil comme Zenodo est très intéressant pour publier vos donnes sur l'Internet tout en suivant au mieux le principe **FAIR**.
@@ -719,8 +738,7 @@ Dans le cadre de vos futures recherches, un outil comme Zenodo est très intére
 
 Afin de respecter ces principes **FAIR**, des outils ont été développés. Il s'agit des plans de gestion des données (ou Data Management Plan, **DMP**). L'Université de Mons dispose d'un [DMP](https://dmponline.be). Cet outil est partagé par l'ensemble des universités de Belgique.
 
-Lorsque vous allez concevoir un plan d'expérience, n'oubliez pas de concevoir votre plan de gestion des données en même temps. Voici une checklist pour un plan de gestion des données efficaces <http://www.dcc.ac.uk/sites/default/files/documents/resource/DMP_Checklist_2013.pdf>
-
+Lorsque vous allez concevoir un plan d'expérience, n'oubliez pas de concevoir votre plan de gestion des données en même temps. Voici une check-list pour un plan de gestion des données efficaces <http://www.dcc.ac.uk/sites/default/files/documents/resource/DMP_Checklist_2013.pdf>
 
 
 ### Utilisation de données ouvertes
@@ -759,26 +777,6 @@ Ce dernier critère est le plus difficile à déterminer. Une première chose à
 
 Comme vous venez de le voir, Zenodo de part sa structuration permet de remplir très simplement cette check-list.
 
-##### À vous de jouer ! {-}
-
-
-```{r assign_B08Ia_mfa_II, echo=FALSE, results='asis'}
-if (exists("assignment"))
-    assignment("B08Ia_mfa", part = "II",
-    url = "https://github.com/BioDataScience-Course/B08Ia_mfa",
-    course.ids = c(
-      'S-BIOG-061' = !"B08Ia_{YY}M_mfa", 
-      'S-BIOG-937-958-959' = !"B08Ia_{YY}C_mfa"),
-    course.urls = c(
-      'S-BIOG-061' = "https://classroom.github.com/a/...", 
-      'S-BIOG-937-958-959' = "https://classroom.github.com/a/..."),
-    course.starts = c(
-      'S-BIOG-061' = !"{W[28]+1} 15:00:00"),
-    course.ends = c(
-      'S-BIOG-061' = !"{W[32]+5} 23:59:59"),
-    term = "Q2", level = 3,
-    toc = "Réflexion sur l'Open Data")
-```
 
 ##### Pour en savoir plus {-}
 
@@ -803,7 +801,7 @@ if (exists("assignment"))
 
 ## Récapitulatif des exercices
 
-Ce module 8 vous a permis de découvrir l'AFM, les indices courants en écologie et l'Open Data. 
+Ce module 8 vous a permis de découvrir l'AFM, les indices courants en écologie et les données ouvertes. 
 
 Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
