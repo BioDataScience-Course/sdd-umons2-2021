@@ -570,21 +570,27 @@ chart(data = pima, glucose ~ insulin %col=% diabetes) +
 
 **Le nuage de points en pseudo-3D** est l’équivalent pour visualiser trois variables quantitatives simultanément. Il est nécessaire de rendre l’effet de la **troisième dimension** (perspective, variation de taille des objets, ...).  La possibilité de **faire tourner l’objet 3D virtuel** est indispensable pour concrétiser l’effet 3D et pour le visionner sous différents angles
 
-Le package {rgl} permet de réaliser ce genre de graphique 3D interactif (que vous pouvez faire tourner dans l'orientation que vous voulez à la souris)\ :
+Le package {rgl} permet de réaliser ce genre de graphique 3D interactif (que vous pouvez faire tourner dans l'orientation que vous voulez à la souris). Dans un document R Markdown, il faut absolument configurer {knitr} qui est responsable de l'inclusion des graphiques R dans le document comme ceci avant toute chose\ :
 
-```{r, echo=FALSE}
+```{r}
 library(rgl)
 knitr::knit_hooks$set(webgl = hook_webgl)
 ```
+
+Ensuite, nous pouvons réaliser le graphique 3D {rgl}\ :
 
 ```{r}
 rgl::plot3d(pima$insulin, pima$glucose, pima$triceps,
   col = as.integer(pima$diabetes))
 ```
 
-```{r, echo=FALSE}
+Enfin, nous l'introduisons dans le document à l'aide de ceci\ :
+
+```{r}
 rgl::rglwidget(width = 800, height = 800)
 ```
+
+À noter que cela ne fonctionne que pour les documents au format HTML.
 
 #### Plus de trois dimensions
 
@@ -999,8 +1005,9 @@ scale_axes <- function(data, aspect.ratio = 1) {
   list(x = range_x, y = range_y)
 }
 
-plot3d <- rgl::plot3d
-plot3d.ca <- ca:::plot3d.ca
+# Not used yet!
+#plot3d <- rgl::plot3d
+#plot3d.ca <- ca:::plot3d.ca
 
 autoplot.ca <- function(object, choices = 1L:2L,
 type = c("screeplot", "altscreeplot", "biplot"), col = "black", fill = "gray",
@@ -1078,7 +1085,7 @@ aspect.ratio = 1, repel = FALSE, ...) {
   res
 }
 chart.ca <- function(data, choices = 1L:2L, ...,
-type = c("screeplot", "altscreeplot", "boiplot"), env = parent.frame())
+type = c("screeplot", "altscreeplot", "biplot"), env = parent.frame())
   autoplot.ca(data, choices = choices, ..., type = type, env = env)
 class(chart.ca) <- c("function", "subsettable_type")
 
